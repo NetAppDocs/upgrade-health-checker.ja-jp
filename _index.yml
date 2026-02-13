@@ -1,0 +1,27 @@
+---
+indexpage:
+  title: Health Checker のアップグレードに関するドキュメント
+  summary: アップグレードヘルスチェッカーは、ONTAPアップグレードの計画と実行を成功させるのに役立つ包括的なヘルスチェックを実行します。
+  keywords: upgrade health checker, ontap, upgrade advisor
+  lead: アップグレードヘルスチェッカーは、ONTAPアップグレードの計画と実行を成功させるのに役立つ包括的なヘルスチェックを実行します。
+  tiles:
+  - title: 始めましょう
+    links:
+    - title: Upgrade Health Checkerについて学ぶ
+      url: learn-about-upgrade-health-checker.html
+    - title: アップグレードヘルスチェッカーを設定する
+      url: set-up-upgrade-health-checker.html
+  - title: アップグレードヘルスチェッカーを使用する
+    links:
+    - title: ONTAPアップグレードレポートを生成する
+      url: generate-report-upgrade-health-checker.html
+    - title: レポート生成を自動化
+      url: automate-report-upgrade-health-checker.html
+  - title: その他のリソース
+    links:
+    - title: Upgrade Health Checkerの入力パラメータについて学ぶ
+      url: upgrade-health-checker-input-parameters.html
+    - title: Upgrade Health Checkerに関するFAQ
+      url: faq.html
+    - title: Upgrade Advisor のドキュメント
+      url: https://docs.netapp.com/us-en/active-iq/upgrade_advisor_overview.html

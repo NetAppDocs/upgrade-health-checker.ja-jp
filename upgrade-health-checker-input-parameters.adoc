@@ -1,0 +1,400 @@
+---
+sidebar: sidebar 
+permalink: upgrade-health-checker-input-parameters.html 
+keywords: upgrade, health, checker, input, parameter 
+summary: ONTAP クラスタのアップグレードレポートの生成を支援するために、Upgrade Health Checker の入力パラメータの詳細を確認できます。 
+---
+= Upgrade Health Checkerの入力パラメータについて学ぶ
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Upgrade Health Checkerの入力パラメータと、CLI引数、設定ファイル、または対話型プロンプトを通じてそれらを提供する方法について詳しく学び、ONTAPクラスタのアップグレードレポートの生成を支援します。
+
+
+
+== 入力方法の優先順位
+
+Upgrade Health Checker では、すべてのパラメータに対していくつかの入力オプションが提供されます。入力を受け入れる優先順位は次のとおりです：
+
+. CLI引数（最高優先度）
+. 設定ファイル(`config.yaml`)
+. 対話型プロンプト（最も優先度が低い）
+
+
+パラメータが複数の方法で提供される場合、ツールは最も優先度の高いソースの値を使用します。
+
+
+
+== 入力パラメータ
+
+
+
+=== クラスタ IP
+
+ `--cluster-ip`パラメータは、接続先のONTAPクラスタのIPアドレスまたはホスト名を指定します。
+
+このパラメータを提供する優先順位は次のとおりです：
+
+. CLI引数： `--cluster-ip`
+. 設定ファイル: `CLUSTER.IP`
+. 対話型プロンプト
+
+
+.例
+[%collapsible]
+====
+* CLI引数：
++
+`./uhc --cluster-ip 192.168.1.100`
+
+* Config.yaml：
++
+[listing]
+----
+CLUSTER:
+  IP: "192.168.1.100"
+----
+* 対話型モード（上記で指定されていない場合）：
++
+ツールは次のようにプロンプトを表示します： `Enter cluster IP address:`
+
+
+
+====
+
+
+=== クラスタのユーザ名
+
+ `--cluster-username`パラメータは、ONTAPクラスタでの認証に使用するユーザー名を指定します。
+
+このパラメータを提供する優先順位は次のとおりです：
+
+. CLI引数： `--cluster-username`
+. 設定ファイル: `CLUSTER.USERNAME`
+. 対話型プロンプト
+
+
+.例
+[%collapsible]
+====
+* CLI引数：
++
+`./uhc --cluster-username admin`
+
+* Config.yaml：
++
+[listing]
+----
+CLUSTER:
+  USERNAME: "admin"
+----
+* 対話型モード（上記で指定されていない場合）：
++
+ツールは次のようにプロンプトを表示します： `Enter cluster username:`
+
+
+
+====
+
+
+=== クラスタパスワード
+
+ `--cluster-password`パラメータは、ONTAPクラスタでの認証用のパスワードを指定します。
+
+このパラメータを提供する優先順位は次のとおりです：
+
+. CLI引数： `--cluster-password`
+. 設定ファイル: `CLUSTER.PASSWORD`
+. 対話型プロンプト（セキュアな入力）
+
+
+.例
+[%collapsible]
+====
+* CLI 引数（セキュリティ上は推奨されません）：
++
+`./uhc --cluster-password mypassword`
+
+* Config.yaml（ファイルの権限が制限されていることを確認してください）：
++
+[listing]
+----
+CLUSTER:
+  PASSWORD: "mypassword"
+----
+* 対話型モード（推奨 - パスワードは非表示）：
++
+ツールは次のようにプロンプトを表示します： `Enter cluster password:`
+
+
+
+====
+
+
+=== ターゲット ONTAP バージョン
+
+ `--target-ontap-version`パラメータは、分析のためにアップグレードする ONTAP バージョンを指定します。既存のクラスタの ONTAP バージョンを維持するには「current」を使用します。
+
+このパラメータを提供する優先順位は次のとおりです：
+
+. CLI引数： `--target-ontap-version`
+. 設定ファイル: `CLUSTER.TARGET_ONTAP_VERSION`
+. インタラクティブな選択メニュー
+
+
+.例
+[%collapsible]
+====
+* CLI引数：
++
+更新版の ONTAP： `./uhc --target-ontap-version 9.15.1`
+
++
+ONTAP の現在のバージョンを維持： `./uhc --target-ontap-version current`
+
+* Config.yaml：
++
+[listing]
+----
+CLUSTER:
+  TARGET_ONTAP_VERSION: "9.15.1"
+----
+* 対話型モード（上記で指定されていない場合）：
++
+ツールは利用可能なバージョンを表示し、選択を促します
+
+
+
+====
+
+
+=== EULAに同意する
+
+ `--accept-eula`パラメータは、エンドユーザーライセンス契約に同意するかどうかを指定します。 `true`に設定する必要があります。
+
+このパラメータを提供する優先順位は次のとおりです：
+
+. CLI引数： `--accept-eula`
+. 設定ファイル: `CLUSTER.ACCEPT_EULA`
+. 対話型プロンプト
+
+
+.例
+[%collapsible]
+====
+* CLI引数：
++
+`./uhc --accept-eula true`
+
+* Config.yaml：
++
+[listing]
+----
+CLUSTER:
+  ACCEPT_EULA: true
+----
+* 対話型モード（上記で指定されていない場合）：
++
+ツールはEULAを表示し、同意を求めます
+
+
+
+====
+
+
+=== 設定ファイルのパス
+
+ `--config-path`パラメーターは、カスタム構成 YAML ファイルへのパスを指定します。
+
+このパラメータを提供する優先順位は次のとおりです：
+
+. CLI引数： `--config-path`
+. デフォルト： `config.yaml`
+
+
+.例
+[%collapsible]
+====
+* CLI引数：
++
+`./uhc --config-path /path/to/custom_config.yaml`
+
+* デフォルト（指定されていない場合）：
++
+ツールは現在のディレクトリでconfig.yamlを検索します
+
+
+
+====
+
+
+=== 実行出力パス
+
+ `--runs-path`パラメーターは、実行出力とレポートを保存するためのカスタムディレクトリを指定します。
+
+このパラメータを提供する優先順位は次のとおりです：
+
+. CLI引数： `--runs-path`
+. 設定ファイル: `APP.RUNS_PATH`
+. デフォルト： `./runs`
+
+
+.例
+[%collapsible]
+====
+* CLI引数：
++
+`./uhc --runs-path /custom/output/path`
+
+* Config.yaml：
++
+[listing]
+----
+APP:
+  RUNS_PATH: "/custom/output/path"
+----
+* デフォルト（指定されていない場合）：
++
+ツールは `./runs` ディレクトリを使用します
+
+
+
+====
+
+
+=== 互換性チェックをスキップ
+
+ `--skip-compatibility-check`パラメータは、ハードウェア互換性チェックをバイパスし、アップグレード先として指定したONTAPのバージョンを使用します。
+
+
+CAUTION: このオプションは、ターゲットの ONTAP バージョンがハードウェアと互換性があることが確実な場合にのみ使用してください。
+
+このパラメータを提供する優先順位は次のとおりです：
+
+. CLI引数： `--skip-compatibility-check`
+. 設定ファイル: `CLUSTER.SKIP_COMPATIBILITY_CHECK`
+. デフォルト： `false`
+
+
+.例
+[%collapsible]
+====
+* CLI引数：
++
+`./uhc --skip-compatibility-check true`
+
+* Config.yaml：
++
+[listing]
+----
+CLUSTER:
+  SKIP_COMPATIBILITY_CHECK: true
+----
+
+
+====
+
+
+=== テレメトリを無効にする
+
+テレメトリを無効にするには、次の行を `config.yaml`ファイルに追加します：
+
+[listing]
+----
+TELEMETRY:
+  ENABLED: false
+----
+
+
+=== 自動更新を無効にする
+
+Upgrade Health Checker の自動更新を無効にするには、次の行を `config.yaml`ファイルに追加します：
+
+[listing]
+----
+AUTO_UPDATE:
+  ENABLED: false
+----
+
+
+== 各入力方法の使用例
+
+
+
+=== 組み合わせた CLI 引数
+
+[listing]
+----
+./uhc \
+  --cluster-ip 192.168.1.100 \
+  --cluster-username admin \
+  --cluster-password mypassword \
+  --target-ontap-version 9.15.1 \
+  --accept-eula true \
+  --config-path /path/to/custom_config.yaml \
+  --runs-path /custom/output \
+  --skip-compatibility-check false
+----
+
+
+=== Config.yaml ファイル
+
+[listing]
+----
+CLUSTER:
+  IP: "192.168.1.100"
+  USERNAME: "admin"
+  PASSWORD: "mypassword"
+  TARGET_ONTAP_VERSION: "9.15.1"
+  ACCEPT_EULA: true
+  SKIP_COMPATIBILITY_CHECK: false
+
+APP:
+  RUNS_PATH: "/custom/output"
+----
+
+
+=== 対話型モード
+
+必要なすべての入力パラメータを対話的に要求するには、引数なしでUpgrade Health Checkerを実行します：
+
+[source, bash]
+----
+./uhc
+----
+
+
+== 追加コマンド
+
+これらのコマンドは、ツールの完全な実行以外にもいくつかの追加機能を提供します：
+
+* ヘルプを表示
++
+`./uhc --help`
+
+* バージョンの表示
++
+`./uhc --version`
+
+* クラスタ接続をテストする
++
+`./uhc --test-connectivity cluster`
+
+* テレメトリ接続のテスト
++
+`./uhc --test-connectivity telemetry`
+
+* 自動更新の接続性をテストする
++
+`./uhc --test-connectivity autoupdate`
+
+* すべてのテストを実行する
++
+`./uhc --test all`
+
+

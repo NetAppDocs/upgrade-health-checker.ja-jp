@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: automate-report-upgrade-health-checker.html 
+keywords: upgrade, health, checker 
+summary: 大規模で複雑な環境でONTAPアップグレードを計画する際の手作業を削減するために、アップグレードヘルスチェッカーレポートの生成を自動化できます。 
+---
+= Upgrade Health Checkerでアップグレード計画の生成を自動化
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+大規模で複雑な環境でONTAPアップグレードを計画する際の手作業を削減するために、アップグレードヘルスチェッカーレポートの生成を自動化できます。
+
+.手順
+. アップグレードレポートを確実に作成するには、link:generate-upgrade-health-checker-report.html["ONTAPアップグレードレポートを生成する"]に記載されている必要な設定手順と1回限りのタスクを完了してください。
+. 環境に適したパラメータを使用して Upgrade Health Checker を実行するスクリプトを作成します。
++
+[source, cli]
+----
+./uhc \
+  --cluster-ip=<cluster-ip> \
+  --cluster-username=<cluster-username> \
+  --cluster-password=<cluster-password> \
+  --target-ontap-version=<target-ontap-version> \
+  --accept-eula=true
+----
++
+以下は、月曜日から金曜日の午前4時にツールを実行する cronjob の例です。バイナリと config.yaml ファイルは /opt/uhc/tool/ にインストールされています。
+
++
+Bash スクリプト：
+
++
+[listing]
+----
+#!/bin/bash
+cd /opt/uhc/tool
+/opt/uhc/tool/uhc --accept-eula true --cluster-ip cluster-mgmt1.example.com --target-ontap-version current --cluster-username uhctool --cluster-password passw0rd
+/opt/uhc/tool/uhc --accept-eula true --cluster-ip cluster-mgmt2.example.com --target-ontap-version 9.14.1 --cluster-username uhctool --cluster-password passw0rd
+----
++
+Cronジョブ：
+
++
+[listing]
+----
+0 4 * * 1-5 /usr/local/bin/uhccron.sh
+----
+. アップグレードヘルスチェッカーがチェックを完了したら、 `runs`フォルダーに移動して、アップグレードプランとクラスターレポートを表示します。
++
+
+NOTE: プログラムの各実行は固有の実行であり、関連するすべてのデータ、ログ、および結果が関連する `runs`フォルダに保存されます。
+
+. レポートファイル（ `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`という名前）をWebブラウザで開いてレポートを表示します。リモートホストでUpgrade Health Checkerを実行している場合は、まずWebブラウザで表示できるマシンにレポートファイルをダウンロードします。
++
+ログパスとレポートパスは次のとおりです：
+
++
+** ログパス： `<output-path>/<unique-run-dir>/<cluster-name>/logs`
+** レポートパス： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+
+
+

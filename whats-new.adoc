@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: upgrade, health, checker, whats new, release, notes 
+summary: このドキュメントサイトの新機能について学習します。 
+---
+= Upgrade Health Checker の新機能
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Upgrade Health Checkerの新機能について説明します。追加の拡張機能情報については、link:https://console.netapp.com/automationHub["NetApp Console自動化ハブ"^]のUpgrade Health Checkerタイルに移動して、最新のUpgrade Health Checkerダウンロードファイルを表示してください。
+
+
+
+== 2026年2月12日
+
+Upgrade Health Checkerは、包括的なオンサイトレポートを生成する新しいソリューションを提供し、ONTAPアップグレードを成功させることができます。既存の自動化およびオーケストレーションフレームワークと併用することで、単一または複数のクラスタをアップグレードする際の効率を高めることができます。Upgrade Health Checkerは、ONTAP 9.11.1以降へのアップグレードをサポートします。
+
+link:learn-about-upgrade-health-checker.html["Upgrade Health Checkerの詳細"]。

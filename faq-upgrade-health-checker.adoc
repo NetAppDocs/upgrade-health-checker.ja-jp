@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: faq-upgrade-health-checker.html 
+keywords: upgrade, health, checker, faq, frequently asked questions, frequently asked questions about upgrade health checker 
+summary: Upgrade Health Checker に関するよくある質問（FAQ）。 
+---
+= Upgrade Health Checkerに関するFAQ
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Upgrade Health Checker に関するよくある質問（FAQ）。
+
+
+
+== Upgrade Health CheckerとUpgrade Advisorの違いは何ですか？
+
+アップグレード ヘルス チェッカーは、大規模または複雑な環境、インターネットへのアクセスが制限されている環境、または既存の自動化およびオーケストレーション フレームワークを持つユーザーに適したオンサイト ツールです。アップグレード アドバイザーは、小規模な環境を所有し、クラウドベースの UI 中心のエクスペリエンスを好むユーザーに適しています。
+
+link:learn-about-upgrade-health-checker.html["Upgrade Health Checkerのアップグレード"]とlink:https://docs.netapp.com/us-en/active-iq/upgrade_advisor_overview.html["Upgrade Advisor"^]の詳細については、ニーズに最適なツールを判断してください。
+
+
+
+== Upgrade Health Checker レポートにはどのような情報が含まれますか？
+
+アップグレードヘルスチェッカーレポートは、ONTAPクラスタをアップグレードする前に対処する必要がある潜在的な障害や警告に関する詳細な情報、クラスタに関連するリスク、およびアップグレード先のONTAPバージョンの新機能と機能拡張に関する情報を提供します。
+
+
+
+== Upgrade Health Checkerはインターネット接続なしで使用できますか？
+
+Upgrade Health Checkerを実行するにはインターネット接続は必要ありません。ONTAPクラスターの現在の構成データを使用して、アップグレード計画とレポートをオンサイトで生成します。
+
+ただし、ツールの自動更新にはインターネットアクセスが必要です。ご利用の環境にインターネット接続がない場合は、NetAppに連絡して、Upgrade Health Checkerツールを最新の状態に保つ方法についてガイダンスを入手してください。
+
+
+
+== Upgrade Health CheckerはどのバージョンのONTAPをサポートしていますか？
+
+アップグレードヘルスチェッカーは、ONTAP 9.11.1 以降へのアップグレードをサポートします。

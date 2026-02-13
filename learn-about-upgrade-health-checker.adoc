@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: learn-about-upgrade-health-checker.html 
+keywords: upgrade, health, checker, ontap 
+summary: Upgrade Health Checkerは、ONTAPアップグレードを成功させるのに役立つ詳細な情報と推奨事項を提供するアップグレードアドバイザリサービスツールです。 
+---
+= Upgrade Health Checkerについて学ぶ
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Upgrade Health Checkerは、ONTAP のアップグレードを成功させるために役立つ詳細な情報と推奨事項を提供するアップグレードアドバイザリサービスツールです。オンサイトで包括的なヘルスチェックを実施し、アップグレードを実行する前に解決する必要がある障害や警告を特定します。
+
+アップグレード ヘルス チェッカーは、既存の自動化およびオーケストレーション フレームワークに統合して、単一または複数のクラスターのアップグレードを支援できます。最新のAutoSupportデータを使用して、クラスターに関連するリスク、アップグレード先のONTAPバージョンの新機能と機能拡張、およびONTAPアップグレードを試みる前に実行すべきアクションに関する詳細で正確なレポートを生成します。
+
+Upgrade Health Checkerの詳細については、link:faq-upgrade-health-checker.html["Upgrade Health Checkerに関するFAQ"]を参照してください。

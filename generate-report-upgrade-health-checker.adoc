@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: generate-report-upgrade-health-checker.html 
+keywords: upgrade, health, checker, report 
+summary: Upgrade Health Checkerを使用すると、単一または複数のONTAPクラスタのアップグレードプランを生成できます。 
+---
+= Upgrade Health Checkerでアップグレードプランを生成する
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Upgrade Health Checkerを使用すると、単一または複数のONTAPクラスタのアップグレードプランを生成できます。
+
+また、複数のクラスタを持つ大規模で複雑な環境がある場合は、link:automate-report-upgrade-health-checker.html["アップグレードレポートの生成を自動化する"]最新のアップグレードプランの維持に役立ちます。
+
+.開始する前に
+アップグレードヘルスチェッカーの特定のパラメータとツールが入力を受け入れる優先順位の詳細については、link:upgrade-health-checker-input-parameters.html["Upgrade Health Checkerの入力パラメータについて学ぶ"]を参照してください。
+
+.手順
+. 初めて実行する前に、バイナリに実行権限を設定します：
++
+[source, cli]
+----
+chmod +x uhc
+----
++
+
+NOTE: Upgrade Health Checkerは自己完結型パッケージであるため、実行する前に自身を解凍する必要があります。これには数秒かかる場合があります。
+
+. Upgrade Health Checkerを完全に実行する前に、ツールがクラスタと必要なエンドポイントに接続できることを確認するための包括的なチェックを実行します：
++
+[source, cli]
+----
+--test all
+----
++
+包括的なチェックにより、Upgrade Health Checkerをホストしている仮想マシンが次の状態にあることが確認されます：
+
++
+** HTTPS経由のONTAPクラスターIPアドレスへの接続性
+** HTTPS経由でのテレメトリエンドポイント(https://support.netapp.com/[]への接続
+** 自動更新エンドポイント（(https://api.uhc.netapp.com[]および https://gql.aiq.netapp.com[]）へのHTTPS経由の接続
+** 少なくとも4GBの空き `/tmp`容量
+
+
+. （オプション）パラメータを保存するために設定ファイルを使用する場合は、バイナリをダウンロードした場所と同じ場所にある `config.yaml.example`ファイルの名前を `config.yaml`に変更します。
++
+config.yaml ファイルの例を次に示します：
+
++
+[listing]
+----
+# Application Configuration
+APP:
+  RUNS_PATH: "/opt/uhc/runs"
+
+# Cluster Credentials
+CLUSTER:
+  IP: "x.x.x.x"
+  USERNAME: "admin"
+  PASSWORD: "xyz"
+  TARGET_ONTAP_VERSION: ""  # Optional: Specify target ONTAP version (e.g., "9.16.1" or "current" to keep existing version). Leave empty to prompt user.
+  ACCEPT_EULA: false  # Optional: Set to true to accept EULA through config. If false/empty, user will be prompted interactively.
+----
+. アップグレード先の ONTAP バージョンを入力し、EULA に同意して、必要に応じて追加のパラメータを含めることで、アップグレードヘルスチェッカーを実行します。
++
+
+NOTE: EULA は複数ページにわたる文書です。 `all`を入力すると文書全体が一度に表示され、 `y`を入力すると同意できます。
+
++
+AutoSupportログがクラスターに対してダウンロードされた後、処理には通常、クラスターノードの数に応じて1～2分かかります。異なる ONTAP ソフトウェアバージョンではAutoSupport収集の処理方法が異なるため、各 Upgrade Health Checker の実行は、クラスターの現在の負荷と現在の ONTAP バージョンに依存します。
+
++
+.. アップグレードヘルスチェッカーの利用可能なパラメータ、入力の優先順位、および特定のパラメータのデフォルト値については、link:upgrade-health-checker-input-parameters.html["Upgrade Health Checkerの入力パラメータについて学ぶ"]を参照してください。
++
+Input Parameters Guideには、ワークフローを効率化するためのカスタム構成ファイルパスと実行パスの指定に関する情報も記載されています。ベストプラクティスは、レポートとログを効果的に整理するために、クラスタごとにカスタム出力ディレクトリを作成することです。
+
+.. EULAに同意し、ターゲットのONTAPバージョンと追加のパラメータを入力して、Upgrade Health Checkerを実行します。
++
+[source, cli]
+----
+./uhc
+----
+
+
+. アップグレードヘルスチェッカーがチェックを完了したら、 `runs`フォルダーに移動して、アップグレードプランとクラスターレポートを表示します。
++
+
+NOTE: プログラムの各実行は「ユニークな実行」であり、関連するすべてのデータ、ログ、結果が関連する `runs`フォルダに保存されます。
+
+. レポートファイル（ `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`という名前）をWebブラウザで開いてレポートを表示します。リモートホストで実行している場合は、まず、Webブラウザでレポートを表示できるマシンにレポートファイルをダウンロードします。
++
+ログパスとレポートパスは次のとおりです：
+
++
+** ログパス： `<output-path>/<unique-run-dir>/<cluster-name>/logs`
+** レポートパス： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+
+
+

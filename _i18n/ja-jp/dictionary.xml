@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="ff8b2ca2f375281780741c458550f6b9" category="summary">大規模で複雑な環境でONTAPアップグレードを計画する際の手作業を削減するために、アップグレードヘルスチェッカーレポートの生成を自動化できます。</block>
+  <block id="851802a6ceccf3253b5814d265b9d85f" category="doc">Upgrade Health Checkerでアップグレード計画の生成を自動化</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">手順</block>
+  <block id="bb4632cd1e5a77d2d2a6ad9870b1edf3" category="inline-link-macro">ONTAPアップグレードレポートを生成する</block>
+  <block id="cbf0409b66c9c191f2bbf7aebb95c7c6" category="list-text">アップグレードレポートを確実に作成するには、<block ref="447f94c751f3bc061f73c40c9324c9a3" category="inline-link-macro-rx"></block>に記載されている必要な設定手順と1回限りのタスクを完了してください。</block>
+  <block id="7c3f7cf7c460927ff3a0856e45060529" category="list-text">環境に適したパラメータを使用して Upgrade Health Checker を実行するスクリプトを作成します。</block>
+  <block id="4a2fc7904851b98a582cefc5576f3c0b" category="paragraph">以下は、月曜日から金曜日の午前4時にツールを実行する cronjob の例です。バイナリと config.yaml ファイルは /opt/uhc/tool/ にインストールされています。</block>
+  <block id="af6a390b44e1466e540d2c134316ae89" category="paragraph">Bash スクリプト：</block>
+  <block id="a16591c11e618548314d95d8cb9f466c" category="paragraph">Cronジョブ：</block>
+  <block id="4a419eed497d5a9cc6325bd677912447" category="list-text">アップグレードヘルスチェッカーがチェックを完了したら、<block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block>フォルダーに移動して、アップグレードプランとクラスターレポートを表示します。</block>
+  <block id="e634565f95b1012e8b64a5e25f71b4d2" category="admonition">プログラムの各実行は固有の実行であり、関連するすべてのデータ、ログ、および結果が関連する<block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block>フォルダに保存されます。</block>
+  <block id="f02cb42b34717f58312e87a6c6a3f0b7" category="list-text">レポートファイル（<block ref="bc3548bedd723b0ffedd796c759eafb1" prefix=" " category="inline-code"></block>という名前）をWebブラウザで開いてレポートを表示します。リモートホストでUpgrade Health Checkerを実行している場合は、まずWebブラウザで表示できるマシンにレポートファイルをダウンロードします。</block>
+  <block id="4e37054133b8a9e3c2adbe0fdc102c34" category="paragraph">ログパスとレポートパスは次のとおりです：</block>
+  <block id="d4f180313d0c382395fb5552082544bf" category="list-text">ログパス：<block ref="056716fdc8e198679abe9b3946c631cf" prefix=" " category="inline-code"></block></block>
+  <block id="63c8b5222d1ee8d79de6660da3eaef50" category="list-text">レポートパス：<block ref="42dfa52dc698f1548746e65dadae2dba" prefix=" " category="inline-code"></block></block>
+  <block id="848fb46d80fa326851b061b6dfad66be" category="summary">Upgrade Health Checker に関するよくある質問（FAQ）。</block>
+  <block id="2a4d8488d929be6bef9bc441b32078c7" category="doc">Upgrade Health Checkerに関するFAQ</block>
+  <block id="9f4e75bee30b521f1814643b0bd0dc50" category="section-title">Upgrade Health CheckerとUpgrade Advisorの違いは何ですか？</block>
+  <block id="c9a3310bb7166dc242d8db4610b88f5a" category="paragraph">アップグレード ヘルス チェッカーは、大規模または複雑な環境、インターネットへのアクセスが制限されている環境、または既存の自動化およびオーケストレーション フレームワークを持つユーザーに適したオンサイト ツールです。アップグレード アドバイザーは、小規模な環境を所有し、クラウドベースの UI 中心のエクスペリエンスを好むユーザーに適しています。</block>
+  <block id="c71db9cf38a7cbb70d70aff81012ef9c" category="inline-link-macro">Upgrade Health Checkerのアップグレード</block>
+  <block id="1e3c19e3742fbfc0e6dd22bb91d109a3" category="inline-link-macro">Upgrade Advisor</block>
+  <block id="9e68fe45421fd86216ab2ab40ec2be80" category="paragraph"><block ref="0135cdd7de5c710c0abe4fd00f89a624" category="inline-link-macro-rx"></block>と<block ref="c0591f277fe5d470be3ec183cffeb8f2" category="inline-link-macro-rx"></block>の詳細については、ニーズに最適なツールを判断してください。</block>
+  <block id="054491cca3f97d47c59c1b49d77b172f" category="section-title">Upgrade Health Checker レポートにはどのような情報が含まれますか？</block>
+  <block id="92134baadd628aac9e12056c62e0dc5e" category="paragraph">アップグレードヘルスチェッカーレポートは、ONTAPクラスタをアップグレードする前に対処する必要がある潜在的な障害や警告に関する詳細な情報、クラスタに関連するリスク、およびアップグレード先のONTAPバージョンの新機能と機能拡張に関する情報を提供します。</block>
+  <block id="a17989ff5f0962c2877477c74338ae61" category="section-title">Upgrade Health Checkerはインターネット接続なしで使用できますか？</block>
+  <block id="3880fea319e437eea669686be6861626" category="paragraph">Upgrade Health Checkerを実行するにはインターネット接続は必要ありません。ONTAPクラスターの現在の構成データを使用して、アップグレード計画とレポートをオンサイトで生成します。</block>
+  <block id="a6d52acf3204cc6a87bd7aaed6f3eef7" category="paragraph">ただし、ツールの自動更新にはインターネットアクセスが必要です。ご利用の環境にインターネット接続がない場合は、NetAppに連絡して、Upgrade Health Checkerツールを最新の状態に保つ方法についてガイダンスを入手してください。</block>
+  <block id="982d129000c1d3e533f5e8593c670b3d" category="section-title">Upgrade Health CheckerはどのバージョンのONTAPをサポートしていますか？</block>
+  <block id="4c8d49c7d71cf0e79e3740d7cf67dd62" category="paragraph">アップグレードヘルスチェッカーは、ONTAP 9.11.1 以降へのアップグレードをサポートします。</block>
+  <block id="b7c89596c79e950e74638e5d75919aee" category="summary">Upgrade Health Checkerを使用すると、単一または複数のONTAPクラスタのアップグレードプランを生成できます。</block>
+  <block id="a46b239b0ed00e39f2903761716caf03" category="doc">Upgrade Health Checkerでアップグレードプランを生成する</block>
+  <block id="e170a21083188ebc6e00ef17f5167dd7" category="inline-link-macro">アップグレードレポートの生成を自動化する</block>
+  <block id="7b29ddbb31d8dbabbb6926d591661d76" category="paragraph">また、複数のクラスタを持つ大規模で複雑な環境がある場合は、<block ref="c8a25bc0c3f7d35cbdee90d212a324b8" category="inline-link-macro-rx"></block>最新のアップグレードプランの維持に役立ちます。</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">開始する前に</block>
+  <block id="71ecafd5cabf66d9de4acfbc15f673f0" category="inline-link-macro">Upgrade Health Checkerの入力パラメータについて学ぶ</block>
+  <block id="2aa522fa4ab716ccbf71bb82df8551f0" category="paragraph">アップグレードヘルスチェッカーの特定のパラメータとツールが入力を受け入れる優先順位の詳細については、<block ref="075d48f32d1c61c7bc401a6884f7cf92" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="a07ce3421753f08f6e19c05607896afb" category="list-text">初めて実行する前に、バイナリに実行権限を設定します：</block>
+  <block id="c2321a704fe7517e5c8db1b11f887bd6" category="admonition">Upgrade Health Checkerは自己完結型パッケージであるため、実行する前に自身を解凍する必要があります。これには数秒かかる場合があります。</block>
+  <block id="42885b6d63050f13b1b1133ef44eb317" category="list-text">Upgrade Health Checkerを完全に実行する前に、ツールがクラスタと必要なエンドポイントに接続できることを確認するための包括的なチェックを実行します：</block>
+  <block id="a6af1159f5885cc5683819f03f5eba4c" category="paragraph">包括的なチェックにより、Upgrade Health Checkerをホストしている仮想マシンが次の状態にあることが確認されます：</block>
+  <block id="d333aef011149b38d807ae69b77df0db" category="list-text">HTTPS経由のONTAPクラスターIPアドレスへの接続性</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
+  <block id="1bda50643710bdee88e5f7b89ecfce86" category="list-text">HTTPS経由でのテレメトリエンドポイント<block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block>への接続</block>
+  <block id="684e35b64e667ed5386392f6bc72425b" category="list-text">自動更新エンドポイント（<block ref="7b0c3a92f481d16df4dd5efff5f61700" category="inline-link-rx"></block>および<block ref="75a282c90668bc1468d683bacd2cabd2" category="inline-link-rx"></block>）へのHTTPS経由の接続</block>
+  <block id="7694967e044dd1d2923b0cea4e472179" category="list-text">少なくとも4GBの空き<block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block>容量</block>
+  <block id="727e26a3103d69ba9d982a7013910355" category="list-text">（オプション）パラメータを保存するために設定ファイルを使用する場合は、バイナリをダウンロードした場所と同じ場所にある<block ref="1010e3344617b31dd1b22e5cb7bd6833" prefix=" " category="inline-code"></block>ファイルの名前を<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block>に変更します。</block>
+  <block id="ea20ff07be154a6d361686df025bbc38" category="paragraph">config.yaml ファイルの例を次に示します：</block>
+  <block id="b13d6443b5efce5469e1286fac0475fa" category="list-text">アップグレード先の ONTAP バージョンを入力し、EULA に同意して、必要に応じて追加のパラメータを含めることで、アップグレードヘルスチェッカーを実行します。</block>
+  <block id="e1cd167d71886d6214cd69f14f6670c3" category="admonition">EULA は複数ページにわたる文書です。<block ref="a181a603769c1f98ad927e7367c7aa51" prefix=" " category="inline-code"></block>を入力すると文書全体が一度に表示され、<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>を入力すると同意できます。</block>
+  <block id="a7138096e367ba1f9aa626ce742f7a7e" category="paragraph">AutoSupportログがクラスターに対してダウンロードされた後、処理には通常、クラスターノードの数に応じて1～2分かかります。異なる ONTAP ソフトウェアバージョンではAutoSupport収集の処理方法が異なるため、各 Upgrade Health Checker の実行は、クラスターの現在の負荷と現在の ONTAP バージョンに依存します。</block>
+  <block id="ddee22b7e916c6ae2d3106c8d7cfd865" category="list-text">アップグレードヘルスチェッカーの利用可能なパラメータ、入力の優先順位、および特定のパラメータのデフォルト値については、<block ref="075d48f32d1c61c7bc401a6884f7cf92" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="06bf55f53800587243aa18867ccc9b0c" category="paragraph">Input Parameters Guideには、ワークフローを効率化するためのカスタム構成ファイルパスと実行パスの指定に関する情報も記載されています。ベストプラクティスは、レポートとログを効果的に整理するために、クラスタごとにカスタム出力ディレクトリを作成することです。</block>
+  <block id="bef31ea9ddf34bff75792f2fff0d5cbc" category="list-text">EULAに同意し、ターゲットのONTAPバージョンと追加のパラメータを入力して、Upgrade Health Checkerを実行します。</block>
+  <block id="d35e5d5961dfaa8f5243866aeef147f3" category="admonition">プログラムの各実行は「ユニークな実行」であり、関連するすべてのデータ、ログ、結果が関連する<block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block>フォルダに保存されます。</block>
+  <block id="08e04af94bbf61d680a4a44d4edb4111" category="list-text">レポートファイル（<block ref="bc3548bedd723b0ffedd796c759eafb1" prefix=" " category="inline-code"></block>という名前）をWebブラウザで開いてレポートを表示します。リモートホストで実行している場合は、まず、Webブラウザでレポートを表示できるマシンにレポートファイルをダウンロードします。</block>
+  <block id="4b88cca218b188588aa2a452e46894da" category="summary">Upgrade Health Checkerは、ONTAPアップグレードを成功させるのに役立つ詳細な情報と推奨事項を提供するアップグレードアドバイザリサービスツールです。</block>
+  <block id="e75e96e756ff4d38a10cdee84526ca22" category="doc">Upgrade Health Checkerについて学ぶ</block>
+  <block id="88e9e7bdabbf15e882c2c1d5c1356ba0" category="paragraph">Upgrade Health Checkerは、ONTAP のアップグレードを成功させるために役立つ詳細な情報と推奨事項を提供するアップグレードアドバイザリサービスツールです。オンサイトで包括的なヘルスチェックを実施し、アップグレードを実行する前に解決する必要がある障害や警告を特定します。</block>
+  <block id="aa3fb0007a6e493d6ff6af5e4cfd6ea9" category="paragraph">アップグレード ヘルス チェッカーは、既存の自動化およびオーケストレーション フレームワークに統合して、単一または複数のクラスターのアップグレードを支援できます。最新のAutoSupportデータを使用して、クラスターに関連するリスク、アップグレード先のONTAPバージョンの新機能と機能拡張、およびONTAPアップグレードを試みる前に実行すべきアクションに関する詳細で正確なレポートを生成します。</block>
+  <block id="e7a7f914c2fd76fa002667ce774516e8" category="paragraph">Upgrade Health Checkerの詳細については、<block ref="6a92c3eccbf08c1bc6caa0a6e92c02bb" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律上の表示</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法的通知から、著作権情報、商標、特許などを確認できます。</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">著作権</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">商標</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp、NetAppのロゴ、NetAppの商標一覧のページに掲載されているマークは、NetApp, Inc.の商標です。その他の会社名と製品名は、それを所有する各社の商標である場合があります。</block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">特許</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">現在NetAppが所有する特許の一覧は以下のページから閲覧できます。</block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">プライバシー ポリシー</block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">オープンソース</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知ファイルは、NetAppソフトウェアで使用されるサードパーティの著作権とライセンスに関する情報を提供します。</block>
+  <block id="b9497e3cda04aa10a25628bf0b021f6a" category="summary">アップグレードヘルスチェッカーをダウンロードして、新しいバージョンの ONTAP にアップグレードする前に、オンサイトで包括的なレポートを生成することができます。</block>
+  <block id="ce2d4be7e0d93c8b156f834ce3704614" category="doc">Upgrade Health Checkerをダウンロードしてセットアップする</block>
+  <block id="55dcd8cbc9d164986479594db66fd89e" category="paragraph">次の仕様で、Upgrade Health Checker用の仮想マシンをセットアップします：</block>
+  <block id="cf0860ffd4dc1929d768f74d92735b75" category="list-text">処理とメモリ：2 つの vCPU と 8 GiB RAM を備えた m5.large VM または同等のもの。</block>
+  <block id="c7ca991550b74c4fb5521603081f476c" category="list-text">推奨オペレーティングシステム：最適な互換性を実現するUbuntu 22.04。</block>
+  <block id="28a03eb4af7c5f6abf99620ada6c6cfb" category="list-text">ストレージ：仮想マシンが侵害された場合にデータを確実に保存できるように、最低100GBのルートボリュームと、少なくとも100GBの追加NFSボリュームを用意します。</block>
+  <block id="492b15c109a51daa9f89630b4f2bb303" category="list-text">ホスティング要件：ツールの自動更新を可能にするために、クラスター接続とインターネットアクセスのある場所にVMを配置します。自動更新を実行するには、マシンがHTTPS経由で次のエンドポイントにアクセスできる必要があります：</block>
+  <block id="072b499eacb5befcbdab2d6cc0fe02a0" category="list-text"><block ref="072b499eacb5befcbdab2d6cc0fe02a0" category="inline-link-rx"></block></block>
+  <block id="53fb0fc7c544c164b74ed43fbccd4384" category="list-text"><block ref="53fb0fc7c544c164b74ed43fbccd4384" category="inline-link-rx"></block></block>
+  <block id="907609b93268ffb2d43f03dae5c950a3" category="paragraph">インターネットにアクセスできない場合は、NetAppにガイダンスをお問い合わせください。</block>
+  <block id="ad9d14ce6f324c6a7d87f50e2b156ad7" category="list-text">推奨パッケージ：アクセスを容易にするために Web サーバーをインストールします。</block>
+  <block id="222fc917ceda606917084c949d4918ba" category="paragraph">さらに、仮想マシンがHTTPS経由でテレメトリエンドポイント<block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block>に接続できることを確認し、NetAppがアップグレードプランに関するAutoSupport情報を受信できるようにします。</block>
+  <block id="513157ecd257a5ac15a2bf664400f97e" category="inline-link-macro">NetApp Console Automation Hubに移動</block>
+  <block id="f7516c48eeea343f7fff7d7edbe475e0" category="list-text">アップグレードヘルスチェッカーのバイナリをダウンロードするには、<block ref="d29e77f401a63487e90236d789082319" category="inline-link-macro-rx"></block>Upgrade Health Checkerタイルを見つけます。</block>
+  <block id="516fc188e817bb3cd710620ace1129a5" category="list-text">Upgrade Health Checker 仮想マシンをセットアップし、SSH を使用してバイナリを任意の場所に配置します。</block>
+  <block id="0243c7349a37a636f0d08348fc2b1ba7" category="list-text">Upgrade Health Checkerのデジタル署名を検証します。</block>
+  <block id="2093f13abbe3f1a90a7519a3aba24859" category="paragraph">Upgrade Health Checker には公開コード署名証明書（<block ref="a1b0111e4810b200f4d7ad5020792ba6" prefix="(" category="inline-code"></block>）および中間証明書とルート証明書のチェーン（<block ref="2cad9a6c3ca1368f7d8a3bdcbf540946" prefix="(" category="inline-code"></block>）があります。</block>
+  <block id="597feb8bdf5d1ae4b08b4cb86780638e" category="list-text">（オプション）チェーンに対してコード署名証明書を検証します：</block>
+  <block id="b5e84c44aa52f6d62828982b72ecdf65" category="paragraph"><block ref="e0aa021e21dddbd6d8cecec71e9cf564" prefix=" " category="inline-code"></block>の出力は、有効な信頼チェーンを確認します。</block>
+  <block id="e0fa928fd1e2158742a5741790c20b19" category="list-text">コード署名証明書から公開鍵を抽出します：</block>
+  <block id="ef1641ccbd0951e08cb106c8bff6b5ca" category="list-text">公開キーを使用して、Upgrade Health Checker バイナリに対して署名ファイル（<block ref="9313952cdb30486dd70ab98e98ec59d4" prefix="(" category="inline-code"></block>）を検証します：</block>
+  <block id="94a2cf0aa74e751f770d9240dcbcb074" category="paragraph"><block ref="33a9cc0739a5a17f65e28cf0b260007f" prefix=" " category="inline-code"></block>の出力は、署名が有効であることを確認します。</block>
+  <block id="9f58de4245b2fb930c02c3766a7ff23f" category="list-text">ONTAP クラスタアクセス用のサービスアカウントとロールを設定します。Upgrade Health Checker を介したクラスタアクセスの場合は、サービスロールを REST ロールとして作成します。</block>
+  <block id="15ec8997d97cf2ca0a22a65e524b2811" category="admonition">Ansibleプレイブックを構築して、すべてのONTAPクラスタへのロールとユーザの導入を自動化できます。</block>
+  <block id="d9e228dba301308afb2b46a1a951b363" category="paragraph">http アプリケーションのサービスアカウントを作成する必要があります。必要な権限を設定するには、次の CLI コマンドを使用します：</block>
+  <block id="c8bb94969a3153538fe3ed12d5ad5c4f" category="list-text">アプリケーションへのアクセスを保護するためにクレデンシャル管理を設定します。</block>
+  <block id="034a1ea726a7fbf3e2fc72fde8ed680d" category="paragraph">例えば、CyberArkとConjurを使用すると、yamlファイルまたはコマンドラインを介して資格情報を渡さないように環境を構成できます。</block>
+  <block id="f2f2f12c645a941c4c701a0ad14f78da" category="list-text">必要なCyberArk金庫を作成：</block>
+  <block id="6fecc57bc25e97c77bad1c6d06e7153d" category="list-text">アプリケーションの資格情報とシークレットを保持するSafe（Main-Conjur-Safe）を作成します</block>
+  <block id="60e537524e61e7f8a44bad3afa7cd330" category="list-text">Conjur ホスト ID と API キーを保持するセーフ（API-Credentials-Safe）を作成します。</block>
+  <block id="c4744df02da870bf92d6364705c156b6" category="list-text">必要な証明書を保持するSafe（Conjur-SSL-Certificate）を作成します。</block>
+  <block id="5afaba9cba7ce8de477f34d11d921a8b" category="list-text">このアプリケーションの構成ファイル（Conjur.conf）と ID ファイル（Conjur.identity）を作成します：</block>
+  <block id="d5d68e242ebd9c5985b84661af24defa" category="list-text">Conjur.conf</block>
+  <block id="492114e082b9c7b687636701e7279aad" category="list-text">Conjur.identity</block>
+  <block id="f6b48feed8edaa886804f4713f44bc3f" category="paragraph">Ansible プレイブックで CyberArk と Conjur を使用する方法の例を次に示します：</block>
+  <block id="1ae7cfb9fd42c03ec54a7688f331a4ca" category="list-text">Conjur Ansible Lookup Plugin を含む Conjur Ansible Collection を Ansible ホストにインストールします：</block>
+  <block id="17ce5fd52d97f9d44f60001292f0ece9" category="list-text">yamlファイルにCyberArkからユーザー名とパスワードを取得するタスクを作成します：</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">次の手順</block>
+  <block id="ec6bec433b1c1808064b71c6aaa7fd9e" category="inline-link-macro">アップグレードレポートの生成</block>
+  <block id="4f3f18c8e521db17af2095588dd0cdbf" category="paragraph">アップグレードヘルスチェッカーを使用すると、<block ref="4e7536d9527fcd8654c1859f9106fb67" category="inline-link-macro-rx"></block>によってONTAPアップグレードの計画を立てることができます。</block>
+  <block id="d10ee20124c466f6b668c45ea930a323" category="summary">ONTAP クラスタのアップグレードレポートの生成を支援するために、Upgrade Health Checker の入力パラメータの詳細を確認できます。</block>
+  <block id="d53948ce39f427fd80052ec24da98866" category="paragraph">Upgrade Health Checkerの入力パラメータと、CLI引数、設定ファイル、または対話型プロンプトを通じてそれらを提供する方法について詳しく学び、ONTAPクラスタのアップグレードレポートの生成を支援します。</block>
+  <block id="c238922030faaf9e95ce23006b54c970" category="section-title">入力方法の優先順位</block>
+  <block id="323e191b40ba0123a2776c0baa05f62d" category="paragraph">Upgrade Health Checker では、すべてのパラメータに対していくつかの入力オプションが提供されます。入力を受け入れる優先順位は次のとおりです：</block>
+  <block id="1fb1195510f62422257687634f390233" category="list-text">CLI引数（最高優先度）</block>
+  <block id="4618fc736ac21a53b35ec29bf995ebbf" category="list-text">設定ファイル<block ref="259fe82e12a866f01123927480c7851b" prefix="(" category="inline-code"></block>)</block>
+  <block id="c02c10c922768d8394a86135898f5619" category="list-text">対話型プロンプト（最も優先度が低い）</block>
+  <block id="7556c6dfaef1a610d641f1e06894a16a" category="paragraph">パラメータが複数の方法で提供される場合、ツールは最も優先度の高いソースの値を使用します。</block>
+  <block id="476013e859f7d89de288df5624801703" category="section-title">入力パラメータ</block>
+  <block id="70087224b93e8179deda7438fae8e843" category="section-title">クラスタ IP</block>
+  <block id="c75506e8c50acab63ae245a1d7b0b5c1" category="paragraph"><block ref="f844f00636430f7720fd87f6324b3230" prefix=" " category="inline-code"></block>パラメータは、接続先のONTAPクラスタのIPアドレスまたはホスト名を指定します。</block>
+  <block id="46fe8388c120f6b58048d1a018a6afd3" category="paragraph">このパラメータを提供する優先順位は次のとおりです：</block>
+  <block id="4cf6ec16bbc58d590a5ed5d604261c0d" category="list-text">CLI引数：<block ref="f844f00636430f7720fd87f6324b3230" prefix=" " category="inline-code"></block></block>
+  <block id="64695ef09ae96408388cbedcf0383906" category="list-text">設定ファイル:<block ref="14e9ea31f56781fd98b7fd89ec2103d2" prefix=" " category="inline-code"></block></block>
+  <block id="2d87557ac59d802428f55e71d23090c2" category="list-text">対話型プロンプト</block>
+  <block id="ff7c0fcd6a31e735a61c001f75426961" category="example-title">例</block>
+  <block id="4b2752f3b0cff1b050f607eb588b1cf5" category="list-text">CLI引数：</block>
+  <block id="8705ee9dda5db66410c43280483663ae" category="paragraph"><block ref="633644433d59e911bf24e3ee42026f1c" prefix="" category="inline-code"></block></block>
+  <block id="99d90ff55a2bcc2901f33c70d5da4557" category="list-text">Config.yaml：</block>
+  <block id="e48417b724fe79f0e05bc8d1f1e96bf6" category="list-text">対話型モード（上記で指定されていない場合）：</block>
+  <block id="7cc488682e6e08d5b9cba7f0fd635b96" category="paragraph">ツールは次のようにプロンプトを表示します：<block ref="b8c8be6f0464c4f81abdce849becc93a" prefix=" " category="inline-code"></block></block>
+  <block id="ff7fcd640932394a53f74f04125835e1" category="section-title">クラスタのユーザ名</block>
+  <block id="3f6db82e6215144725062caff32e00c1" category="paragraph"><block ref="8e9924bb9831f9d205b67adb9aa9c89c" prefix=" " category="inline-code"></block>パラメータは、ONTAPクラスタでの認証に使用するユーザー名を指定します。</block>
+  <block id="ec0729156f9c9d375c3a86407ed5d613" category="list-text">CLI引数：<block ref="8e9924bb9831f9d205b67adb9aa9c89c" prefix=" " category="inline-code"></block></block>
+  <block id="1f919129381394e32842e43afcf7e6d0" category="list-text">設定ファイル:<block ref="115e9f5736e67868a412e572990da972" prefix=" " category="inline-code"></block></block>
+  <block id="369eab05dd6d1b73169df19ea569f4a5" category="paragraph"><block ref="e5dd3266ede07087bef357c74c6fa8fc" prefix="" category="inline-code"></block></block>
+  <block id="9732567210f4e95a69f5c98223b32c6d" category="paragraph">ツールは次のようにプロンプトを表示します：<block ref="0ded070da67db9d7009666ba2c8c4582" prefix=" " category="inline-code"></block></block>
+  <block id="0c191ee206a91460fd94e2ff976a38e7" category="section-title">クラスタパスワード</block>
+  <block id="0d0af704398a96addaa3af129dd6fa84" category="paragraph"><block ref="3bd841f8e7ecc1cb3406ab1cec889115" prefix=" " category="inline-code"></block>パラメータは、ONTAPクラスタでの認証用のパスワードを指定します。</block>
+  <block id="5b0d42d6408e4c88dd02bd1617fc7599" category="list-text">CLI引数：<block ref="3bd841f8e7ecc1cb3406ab1cec889115" prefix=" " category="inline-code"></block></block>
+  <block id="247c9e53ad680999bd6359f61f1efa15" category="list-text">設定ファイル:<block ref="b3a147e2cf79950f6952976c2b24b015" prefix=" " category="inline-code"></block></block>
+  <block id="9a04c5073fe87df0927bccdb06b7784b" category="list-text">対話型プロンプト（セキュアな入力）</block>
+  <block id="127b88eddfd104f63a7996f7315ab36d" category="list-text">CLI 引数（セキュリティ上は推奨されません）：</block>
+  <block id="02796d68d841681536e55aa84501a5e0" category="paragraph"><block ref="4491732129e2c8fa117ab30f9c69fc79" prefix="" category="inline-code"></block></block>
+  <block id="5959717273c29c4753bb94cb3a9784e2" category="list-text">Config.yaml（ファイルの権限が制限されていることを確認してください）：</block>
+  <block id="a9095116df40436c4ef219e805c345ee" category="list-text">対話型モード（推奨 - パスワードは非表示）：</block>
+  <block id="f5001e8cc356cc13693228d3976db02a" category="paragraph">ツールは次のようにプロンプトを表示します：<block ref="c5937dba7ed853571bb7b6e83e54f40e" prefix=" " category="inline-code"></block></block>
+  <block id="6bb3222dda6de7575b34020a07187451" category="section-title">ターゲット ONTAP バージョン</block>
+  <block id="6fdcd93cab77d35597a1dc0faea379fb" category="paragraph"><block ref="8fea203bf97a25109f25c0a37994e292" prefix=" " category="inline-code"></block>パラメータは、分析のためにアップグレードする ONTAP バージョンを指定します。既存のクラスタの ONTAP バージョンを維持するには「current」を使用します。</block>
+  <block id="5c2d47f6fb85e702b227699b1e2b7e00" category="list-text">CLI引数：<block ref="8fea203bf97a25109f25c0a37994e292" prefix=" " category="inline-code"></block></block>
+  <block id="bd251e17c91b23ef60ed75bf80817074" category="list-text">設定ファイル:<block ref="2271a79660cb8125d47a4eb72c5dc9b9" prefix=" " category="inline-code"></block></block>
+  <block id="e45a983c88b69f722274f95dbaf85607" category="list-text">インタラクティブな選択メニュー</block>
+  <block id="a8cdf50950825af99fb80665a9db4299" category="paragraph">更新版の ONTAP：<block ref="235e540a452b98abb270417100e3aad0" prefix=" " category="inline-code"></block></block>
+  <block id="fec7f84e2641348d1dacfe1ac269f4aa" category="paragraph">ONTAP の現在のバージョンを維持：<block ref="992866f5dcd6092ba3e5e63156bd6c12" prefix=" " category="inline-code"></block></block>
+  <block id="29d64e316e6219a7a595656472fc4bb7" category="paragraph">ツールは利用可能なバージョンを表示し、選択を促します</block>
+  <block id="9ffbe169b7db1bee5ce86eb6d1e15a5f" category="section-title">EULAに同意する</block>
+  <block id="354de4470baa97b0784285a30191cad9" category="paragraph"><block ref="c4e1b5b89a32724aede5f2b9687d32b0" prefix=" " category="inline-code"></block>パラメータは、エンドユーザーライセンス契約に同意するかどうかを指定します。<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>に設定する必要があります。</block>
+  <block id="4bcdff40c528c94a3ac33fceac0ae5c7" category="list-text">CLI引数：<block ref="c4e1b5b89a32724aede5f2b9687d32b0" prefix=" " category="inline-code"></block></block>
+  <block id="04a7a851ba6ccfc3c862e280dff9d47a" category="list-text">設定ファイル:<block ref="9e5121ad073324f8fac5f124152a97f5" prefix=" " category="inline-code"></block></block>
+  <block id="c216150692debe7132587c2b181f4aef" category="paragraph"><block ref="2716072d4c7e90df917c2ed9fa2abf9e" prefix="" category="inline-code"></block></block>
+  <block id="f4de0242a000b8295d35188be2e824b2" category="paragraph">ツールはEULAを表示し、同意を求めます</block>
+  <block id="75b0c2229298fb17b407a9d0da5c9c9a" category="section-title">設定ファイルのパス</block>
+  <block id="6bf36f6a417be822fcc03507ba0f2006" category="paragraph"><block ref="aa0d829d2fcb248ba06549edc2bd07ac" prefix=" " category="inline-code"></block>パラメーターは、カスタム構成 YAML ファイルへのパスを指定します。</block>
+  <block id="80c59ccf1fb0819c3f4ccd508dbec2f4" category="list-text">CLI引数：<block ref="aa0d829d2fcb248ba06549edc2bd07ac" prefix=" " category="inline-code"></block></block>
+  <block id="505c939cebf726feebd6fc21d6bf7984" category="list-text">デフォルト：<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block></block>
+  <block id="d7cc232149069938fc37cdf71c773fbb" category="paragraph"><block ref="a2f5bccf595b68d5e02be2530bda057a" prefix="" category="inline-code"></block></block>
+  <block id="8ad3c6f951b4045f04413eec3b7922c4" category="list-text">デフォルト（指定されていない場合）：</block>
+  <block id="a6a868631bba716656e3740af43fa00a" category="paragraph">ツールは現在のディレクトリでconfig.yamlを検索します</block>
+  <block id="cabfa16fb44ee4ead33f8423edc88b13" category="section-title">実行出力パス</block>
+  <block id="a9e5390a602948699327340c04cc6377" category="paragraph"><block ref="0b5540609e2d46235709175fd8e2693b" prefix=" " category="inline-code"></block>パラメーターは、実行出力とレポートを保存するためのカスタムディレクトリを指定します。</block>
+  <block id="dee6a3a660575ea189bf39e25c743edd" category="list-text">CLI引数：<block ref="0b5540609e2d46235709175fd8e2693b" prefix=" " category="inline-code"></block></block>
+  <block id="4c24c0554e450c08504c393b159e47d7" category="list-text">設定ファイル:<block ref="fe00e5cee944304042641fe263ea293d" prefix=" " category="inline-code"></block></block>
+  <block id="06d1d87ce6d9bd664108e7dc9dc78f5a" category="list-text">デフォルト：<block ref="c3edf6fb65df0152ea3db49d109d41f0" prefix=" " category="inline-code"></block></block>
+  <block id="6586cf31274f0b98c03ba1e36f40f3da" category="paragraph"><block ref="8e3bb742ea380a81db12a3fd40bc3db3" prefix="" category="inline-code"></block></block>
+  <block id="dadb196e65d9623c2742a0077f0fce83" category="paragraph">ツールは<block ref="c3edf6fb65df0152ea3db49d109d41f0" prefix=" " category="inline-code"></block> ディレクトリを使用します</block>
+  <block id="5830703e51e0e0d6534107242f258d4c" category="section-title">互換性チェックをスキップ</block>
+  <block id="72818ddc455895483f200f3ba5a8231e" category="paragraph"><block ref="66a905f649ae7fc669e70a476c6631c3" prefix=" " category="inline-code"></block>パラメータは、ハードウェア互換性チェックをバイパスし、アップグレード先として指定したONTAPのバージョンを使用します。</block>
+  <block id="e2f03f072c7c52e0c11a31e688f75d0c" category="admonition">このオプションは、ターゲットの ONTAP バージョンがハードウェアと互換性があることが確実な場合にのみ使用してください。</block>
+  <block id="5abcb79d38d8843ecfc75361c67dda7d" category="list-text">CLI引数：<block ref="66a905f649ae7fc669e70a476c6631c3" prefix=" " category="inline-code"></block></block>
+  <block id="d435f573d6c2d377c4f8b7c27fad0f8b" category="list-text">設定ファイル:<block ref="c7bcd33a8fcd39b481e4afa17e20c6fe" prefix=" " category="inline-code"></block></block>
+  <block id="98277f883ea7a0cc9b33c29219b90421" category="list-text">デフォルト：<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block></block>
+  <block id="57443621322267804eb3eb209a7177d6" category="paragraph"><block ref="f61062a0552c0603acf718c601358cd2" prefix="" category="inline-code"></block></block>
+  <block id="b100fd455b43434a4fe5f09de5b31e2c" category="section-title">テレメトリを無効にする</block>
+  <block id="32037ceaa25ee46f50c49eafc2ece95f" category="paragraph">テレメトリを無効にするには、次の行を<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block>ファイルに追加します：</block>
+  <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">自動更新を無効にする</block>
+  <block id="310675af32778e28645e16942a8f604d" category="paragraph">Upgrade Health Checker の自動更新を無効にするには、次の行を<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block>ファイルに追加します：</block>
+  <block id="bfbc4b4e9ef684fdccbf4518a5a9d2b7" category="section-title">各入力方法の使用例</block>
+  <block id="f232d111a794eb5f37dffe4641d22bfe" category="section-title">組み合わせた CLI 引数</block>
+  <block id="5363982494efe20879ee60ad65e0ad59" category="section-title">Config.yaml ファイル</block>
+  <block id="c66f19bf3e23bb1d8f53417edec7a608" category="section-title">対話型モード</block>
+  <block id="61ff0695e48b9e7fcc7c4c62527dd02a" category="paragraph">必要なすべての入力パラメータを対話的に要求するには、引数なしでUpgrade Health Checkerを実行します：</block>
+  <block id="3a7013200321f0af417defd7253a0867" category="section-title">追加コマンド</block>
+  <block id="0b5a1f22b334d555e2c35ceb23b9e08a" category="paragraph">これらのコマンドは、ツールの完全な実行以外にもいくつかの追加機能を提供します：</block>
+  <block id="aaf12997ac25ce871e8b4969dfada046" category="list-text">ヘルプを表示</block>
+  <block id="829bc0a083ea00ab6a64abe899ca0047" category="paragraph"><block ref="42e4e03a7fe5f67a66f1b92d7683bbb9" prefix="" category="inline-code"></block></block>
+  <block id="77fd00c3b3d01651b63a258dbc2f05b1" category="list-text">バージョンの表示</block>
+  <block id="c1cf9a31e27add8a5df5f609125770a1" category="paragraph"><block ref="262a2406c2bbf20f92a5689bf92413cd" prefix="" category="inline-code"></block></block>
+  <block id="897f3d371462811c080a4f5edafdb445" category="list-text">クラスタ接続をテストする</block>
+  <block id="9f75c9be5a88eae06a5482c0c8635a02" category="paragraph"><block ref="f609451ce7593e4800e051b5d8df3dee" prefix="" category="inline-code"></block></block>
+  <block id="a53c09b10d81119ee734f13db16b5b60" category="list-text">テレメトリ接続のテスト</block>
+  <block id="07e4cd8bb717fc56dd8f24955a8f0a97" category="paragraph"><block ref="1f4e0132b734770ea37d56fa1eab8378" prefix="" category="inline-code"></block></block>
+  <block id="2a2202c6cb59da36d2f1144002727949" category="list-text">自動更新の接続性をテストする</block>
+  <block id="ef19d0479cab89428496031fdd78325d" category="paragraph"><block ref="c6246d591d6aa8f51360f3fc1fb73099" prefix="" category="inline-code"></block></block>
+  <block id="1691b00c4db1feb3956ab3c4a26a95aa" category="list-text">すべてのテストを実行する</block>
+  <block id="896cc7fe61fff04a98ca32ae4ff2f38e" category="paragraph"><block ref="ae6aeb5ef90dc9dd427032fc8f9f6fe3" prefix="" category="inline-code"></block></block>
+  <block id="daad4dadeda8cd86f01c8ad7f2a30465" category="summary">このドキュメントサイトの新機能について学習します。</block>
+  <block id="a8324b80938b67ec782deb0221494038" category="doc">Upgrade Health Checker の新機能</block>
+  <block id="984ed907e956f5ada3f813bd4a802fd2" category="inline-link-macro">NetApp Console自動化ハブ</block>
+  <block id="28418efc88b69f5e65f0a85f816e9eea" category="paragraph">Upgrade Health Checkerの新機能について説明します。追加の拡張機能情報については、<block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block>のUpgrade Health Checkerタイルに移動して、最新のUpgrade Health Checkerダウンロードファイルを表示してください。</block>
+  <block id="70d92c1e2419b7500249e84f56bfda5d" category="section-title">2026年2月12日</block>
+  <block id="ae47874d4e80f14ff840114a5af1558e" category="paragraph">Upgrade Health Checkerは、包括的なオンサイトレポートを生成する新しいソリューションを提供し、ONTAPアップグレードを成功させることができます。既存の自動化およびオーケストレーションフレームワークと併用することで、単一または複数のクラスタをアップグレードする際の効率を高めることができます。Upgrade Health Checkerは、ONTAP 9.11.1以降へのアップグレードをサポートします。</block>
+  <block id="ba6d627457ce6f12fac3776c3f84b9f5" category="inline-link-macro">Upgrade Health Checkerの詳細</block>
+  <block id="c2da3472d13132f746797e82ab607214" category="paragraph"><block ref="311172ef496e6974c00a808505e30585" category="inline-link-macro-rx"></block>。</block>
+  <block id="6e777a6e34571fc72776d25b82dfacec" category="sidebar">アップグレードヘルスチェッカーは、ONTAPアップグレードの計画と実行を成功させるのに役立つ包括的なヘルスチェックを実行します。</block>
+  <block id="fd88efe65babf49c3738468cf7693090" category="sidebar">Health Checker のアップグレードに関するドキュメント</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">始めましょう</block>
+  <block id="b90d5d04488d396d7b7e8b456398412c" category="sidebar">アップグレードヘルスチェッカーを設定する</block>
+  <block id="e28bd5f4fde7913aca83e892e7ffda0a" category="sidebar">アップグレードヘルスチェッカーを使用する</block>
+  <block id="514c14b02caf403ad003cd6f6072c8d1" category="sidebar">レポート生成を自動化</block>
+  <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">その他のリソース</block>
+  <block id="a3c4408acdfc01e2ed1bf7df24ffcfbd" category="sidebar">Upgrade Advisor のドキュメント</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">リリース ノート</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
+  <block id="6ba8c57dc65e01916d692a44ff09f37a" category="sidebar">Upgrade Health Checkerの入力パラメータ</block>
+  <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">FAQ</block>
+</blocks>

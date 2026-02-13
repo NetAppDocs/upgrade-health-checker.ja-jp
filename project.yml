@@ -1,0 +1,35 @@
+---
+settings:
+  name: Upgrade Health Checker
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: ja-jp,us-en,de-de,es-es,fr-fr,it-it,pt-br,ko-kr,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: Health Checker のアップグレードに関するドキュメント
+    url: "/index.html"
+  - title: リリース ノート
+    entries:
+    - title: 新機能
+      url: "/whats-new.html"
+  - title: 始めましょう
+    entries:
+    - title: Upgrade Health Checkerについて学ぶ
+      url: "/learn-about-upgrade-health-checker.html"
+    - title: アップグレードヘルスチェッカーを設定する
+      url: "/set-up-upgrade-health-checker.html"
+  - title: アップグレードヘルスチェッカーを使用する
+    entries:
+    - title: ONTAPアップグレードレポートを生成する
+      url: "/generate-report-upgrade-health-checker.html"
+    - title: レポート生成を自動化
+      url: "/automate-report-upgrade-health-checker.html"
+  - title: Upgrade Health Checkerの入力パラメータ
+    url: "/upgrade-health-checker-input-parameters.html"
+  - title: FAQ
+    url: "/faq-upgrade-health-checker.html"
+  - title: 法律上の表示
+    url: "/legal-notices.html"
