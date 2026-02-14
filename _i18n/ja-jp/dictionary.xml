@@ -217,7 +217,6 @@
   <block id="a8324b80938b67ec782deb0221494038" category="doc">Upgrade Health Checker の新機能</block>
   <block id="984ed907e956f5ada3f813bd4a802fd2" category="inline-link-macro">NetApp Console自動化ハブ</block>
   <block id="28418efc88b69f5e65f0a85f816e9eea" category="paragraph">Upgrade Health Checkerの新機能について説明します。追加の拡張機能情報については、<block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block>のUpgrade Health Checkerタイルに移動して、最新のUpgrade Health Checkerダウンロードファイルを表示してください。</block>
-  <block id="70d92c1e2419b7500249e84f56bfda5d" category="section-title">2026年2月12日</block>
   <block id="ae47874d4e80f14ff840114a5af1558e" category="paragraph">Upgrade Health Checkerは、包括的なオンサイトレポートを生成する新しいソリューションを提供し、ONTAPアップグレードを成功させることができます。既存の自動化およびオーケストレーションフレームワークと併用することで、単一または複数のクラスタをアップグレードする際の効率を高めることができます。Upgrade Health Checkerは、ONTAP 9.11.1以降へのアップグレードをサポートします。</block>
   <block id="ba6d627457ce6f12fac3776c3f84b9f5" category="inline-link-macro">Upgrade Health Checkerの詳細</block>
   <block id="c2da3472d13132f746797e82ab607214" category="paragraph"><block ref="311172ef496e6974c00a808505e30585" category="inline-link-macro-rx"></block>。</block>
@@ -228,9 +227,9 @@
   <block id="e28bd5f4fde7913aca83e892e7ffda0a" category="sidebar">アップグレードヘルスチェッカーを使用する</block>
   <block id="514c14b02caf403ad003cd6f6072c8d1" category="sidebar">レポート生成を自動化</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">その他のリソース</block>
-  <block id="a3c4408acdfc01e2ed1bf7df24ffcfbd" category="sidebar">Upgrade Advisor のドキュメント</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">リリース ノート</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
   <block id="6ba8c57dc65e01916d692a44ff09f37a" category="sidebar">Upgrade Health Checkerの入力パラメータ</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">FAQ</block>
+  <block id="d8f8bff1a4b83b3c4aa6b4284a2e39c2" category="section-title">2026年2月13日</block>
 </blocks>
