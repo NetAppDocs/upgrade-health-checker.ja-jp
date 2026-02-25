@@ -35,7 +35,7 @@ link:learn-about-upgrade-health-checker.html["Upgrade Health Checkerのアップ
 
 Upgrade Health Checkerを実行するにはインターネット接続は必要ありません。ONTAPクラスターの現在の構成データを使用して、アップグレード計画とレポートをオンサイトで生成します。
 
-ただし、ツールの自動更新にはインターネットアクセスが必要です。ご利用の環境にインターネット接続がない場合は、NetAppに連絡して、Upgrade Health Checkerツールを最新の状態に保つ方法についてガイダンスを入手してください。
+ただし、ツールの自動更新にはインターネットアクセスが必要です。お使いの環境にインターネット接続がない場合は、link:https://console.netapp.com/automationHub["NetApp Console自動化ハブ"]のUpgrade Health Checkerタイルから最新バージョンのツールを手動でダウンロードできます。
 
 
 

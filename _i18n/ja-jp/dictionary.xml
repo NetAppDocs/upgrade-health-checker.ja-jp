@@ -4,7 +4,6 @@
   <block id="851802a6ceccf3253b5814d265b9d85f" category="doc">Upgrade Health Checkerでアップグレード計画の生成を自動化</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">手順</block>
   <block id="bb4632cd1e5a77d2d2a6ad9870b1edf3" category="inline-link-macro">ONTAPアップグレードレポートを生成する</block>
-  <block id="cbf0409b66c9c191f2bbf7aebb95c7c6" category="list-text">アップグレードレポートを確実に作成するには、<block ref="447f94c751f3bc061f73c40c9324c9a3" category="inline-link-macro-rx"></block>に記載されている必要な設定手順と1回限りのタスクを完了してください。</block>
   <block id="7c3f7cf7c460927ff3a0856e45060529" category="list-text">環境に適したパラメータを使用して Upgrade Health Checker を実行するスクリプトを作成します。</block>
   <block id="4a2fc7904851b98a582cefc5576f3c0b" category="paragraph">以下は、月曜日から金曜日の午前4時にツールを実行する cronjob の例です。バイナリと config.yaml ファイルは /opt/uhc/tool/ にインストールされています。</block>
   <block id="af6a390b44e1466e540d2c134316ae89" category="paragraph">Bash スクリプト：</block>
@@ -26,7 +25,6 @@
   <block id="92134baadd628aac9e12056c62e0dc5e" category="paragraph">アップグレードヘルスチェッカーレポートは、ONTAPクラスタをアップグレードする前に対処する必要がある潜在的な障害や警告に関する詳細な情報、クラスタに関連するリスク、およびアップグレード先のONTAPバージョンの新機能と機能拡張に関する情報を提供します。</block>
   <block id="a17989ff5f0962c2877477c74338ae61" category="section-title">Upgrade Health Checkerはインターネット接続なしで使用できますか？</block>
   <block id="3880fea319e437eea669686be6861626" category="paragraph">Upgrade Health Checkerを実行するにはインターネット接続は必要ありません。ONTAPクラスターの現在の構成データを使用して、アップグレード計画とレポートをオンサイトで生成します。</block>
-  <block id="a6d52acf3204cc6a87bd7aaed6f3eef7" category="paragraph">ただし、ツールの自動更新にはインターネットアクセスが必要です。ご利用の環境にインターネット接続がない場合は、NetAppに連絡して、Upgrade Health Checkerツールを最新の状態に保つ方法についてガイダンスを入手してください。</block>
   <block id="982d129000c1d3e533f5e8593c670b3d" category="section-title">Upgrade Health CheckerはどのバージョンのONTAPをサポートしていますか？</block>
   <block id="4c8d49c7d71cf0e79e3740d7cf67dd62" category="paragraph">アップグレードヘルスチェッカーは、ONTAP 9.11.1 以降へのアップグレードをサポートします。</block>
   <block id="b7c89596c79e950e74638e5d75919aee" category="summary">Upgrade Health Checkerを使用すると、単一または複数のONTAPクラスタのアップグレードプランを生成できます。</block>
@@ -232,4 +230,6 @@
   <block id="6ba8c57dc65e01916d692a44ff09f37a" category="sidebar">Upgrade Health Checkerの入力パラメータ</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">FAQ</block>
   <block id="d8f8bff1a4b83b3c4aa6b4284a2e39c2" category="section-title">2026年2月13日</block>
+  <block id="f245d5b92eabff0d1c1d1e41530987d0" category="list-text">アップグレードレポートを確実に作成するには、<block ref="6489edbb98d22789fa797cea6950f9bd" category="inline-link-macro-rx"></block>に記載されている必要な設定手順と1回限りのタスクを完了してください。</block>
+  <block id="4a5a50ece5ac2f055b9ecb1ac0f449f2" category="paragraph">ただし、ツールの自動更新にはインターネットアクセスが必要です。お使いの環境にインターネット接続がない場合は、<block ref="886a64ecc1d4032be9eb5d1da893e684" category="inline-link-macro-rx"></block>のUpgrade Health Checkerタイルから最新バージョンのツールを手動でダウンロードできます。</block>
 </blocks>

@@ -16,7 +16,7 @@ summary: 大規模で複雑な環境でONTAPアップグレードを計画する
 大規模で複雑な環境でONTAPアップグレードを計画する際の手作業を削減するために、アップグレードヘルスチェッカーレポートの生成を自動化できます。
 
 .手順
-. アップグレードレポートを確実に作成するには、link:generate-upgrade-health-checker-report.html["ONTAPアップグレードレポートを生成する"]に記載されている必要な設定手順と1回限りのタスクを完了してください。
+. アップグレードレポートを確実に作成するには、link:generate-report-upgrade-health-checker.html["ONTAPアップグレードレポートを生成する"]に記載されている必要な設定手順と1回限りのタスクを完了してください。
 . 環境に適したパラメータを使用して Upgrade Health Checker を実行するスクリプトを作成します。
 +
 [source, cli]
