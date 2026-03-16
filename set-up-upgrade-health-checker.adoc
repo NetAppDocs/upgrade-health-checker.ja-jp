@@ -15,11 +15,20 @@ summary: アップグレードヘルスチェッカーをダウンロードし�
 [role="lead"]
 アップグレードヘルスチェッカーをダウンロードして、新しいバージョンの ONTAP にアップグレードする前に、オンサイトで包括的なレポートを生成することができます。
 
+.タスク概要
+Upgrade Health Checkerは、オンプレミスONTAPバージョン9.11.1以降のアップグレードをサポートしています。Cloud Volumes ONTAPを使用している場合は、システムのアップグレードに関する情報についてlink:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html#supported-upgrade-paths["Cloud Volumes ONTAPのアップグレード"]を参照してください。
+
 .開始する前に
 次の仕様で、Upgrade Health Checker用の仮想マシンをセットアップします：
 
 * 処理とメモリ：2 つの vCPU と 8 GiB RAM を備えた m5.large VM または同等のもの。
-* 推奨オペレーティングシステム：最適な互換性を実現するUbuntu 22.04。
+* 推奨オペレーティングシステム：最適な互換性を確保するため、glibcライブラリのバージョン2.28以降を搭載したLinux OS。これには以下が含まれます：
++
+** Ubuntu 22.04
+** RHEL8
+** RHEL9
+
+
 * ストレージ：仮想マシンが侵害された場合にデータを確実に保存できるように、最低100GBのルートボリュームと、少なくとも100GBの追加NFSボリュームを用意します。
 * ホスティング要件：ツールの自動更新を可能にするために、クラスター接続とインターネットアクセスのある場所にVMを配置します。自動更新を実行するには、マシンがHTTPS経由で次のエンドポイントにアクセスできる必要があります：
 +
@@ -92,7 +101,7 @@ security login create -user-or-group-name uhctool -role uhctool -application htt
 
 security login create -user-or-group-name uhctool -role uhctool -application ssh -authentication-method password
 ----
-. アプリケーションへのアクセスを保護するためにクレデンシャル管理を設定します。
+. （オプション）アプリケーションへのアクセスを保護するために、認証情報管理を設定します。
 +
 例えば、CyberArkとConjurを使用すると、yamlファイルまたはコマンドラインを介して資格情報を渡さないように環境を構成できます。
 

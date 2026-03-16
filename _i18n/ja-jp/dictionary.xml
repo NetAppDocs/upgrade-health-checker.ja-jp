@@ -26,7 +26,6 @@
   <block id="a17989ff5f0962c2877477c74338ae61" category="section-title">Upgrade Health Checkerはインターネット接続なしで使用できますか？</block>
   <block id="3880fea319e437eea669686be6861626" category="paragraph">Upgrade Health Checkerを実行するにはインターネット接続は必要ありません。ONTAPクラスターの現在の構成データを使用して、アップグレード計画とレポートをオンサイトで生成します。</block>
   <block id="982d129000c1d3e533f5e8593c670b3d" category="section-title">Upgrade Health CheckerはどのバージョンのONTAPをサポートしていますか？</block>
-  <block id="4c8d49c7d71cf0e79e3740d7cf67dd62" category="paragraph">アップグレードヘルスチェッカーは、ONTAP 9.11.1 以降へのアップグレードをサポートします。</block>
   <block id="b7c89596c79e950e74638e5d75919aee" category="summary">Upgrade Health Checkerを使用すると、単一または複数のONTAPクラスタのアップグレードプランを生成できます。</block>
   <block id="a46b239b0ed00e39f2903761716caf03" category="doc">Upgrade Health Checkerでアップグレードプランを生成する</block>
   <block id="e170a21083188ebc6e00ef17f5167dd7" category="inline-link-macro">アップグレードレポートの生成を自動化する</block>
@@ -57,7 +56,6 @@
   <block id="e75e96e756ff4d38a10cdee84526ca22" category="doc">Upgrade Health Checkerについて学ぶ</block>
   <block id="88e9e7bdabbf15e882c2c1d5c1356ba0" category="paragraph">Upgrade Health Checkerは、ONTAP のアップグレードを成功させるために役立つ詳細な情報と推奨事項を提供するアップグレードアドバイザリサービスツールです。オンサイトで包括的なヘルスチェックを実施し、アップグレードを実行する前に解決する必要がある障害や警告を特定します。</block>
   <block id="aa3fb0007a6e493d6ff6af5e4cfd6ea9" category="paragraph">アップグレード ヘルス チェッカーは、既存の自動化およびオーケストレーション フレームワークに統合して、単一または複数のクラスターのアップグレードを支援できます。最新のAutoSupportデータを使用して、クラスターに関連するリスク、アップグレード先のONTAPバージョンの新機能と機能拡張、およびONTAPアップグレードを試みる前に実行すべきアクションに関する詳細で正確なレポートを生成します。</block>
-  <block id="e7a7f914c2fd76fa002667ce774516e8" category="paragraph">Upgrade Health Checkerの詳細については、<block ref="6a92c3eccbf08c1bc6caa0a6e92c02bb" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律上の表示</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法的通知から、著作権情報、商標、特許などを確認できます。</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">著作権</block>
@@ -80,7 +78,6 @@
   <block id="ce2d4be7e0d93c8b156f834ce3704614" category="doc">Upgrade Health Checkerをダウンロードしてセットアップする</block>
   <block id="55dcd8cbc9d164986479594db66fd89e" category="paragraph">次の仕様で、Upgrade Health Checker用の仮想マシンをセットアップします：</block>
   <block id="cf0860ffd4dc1929d768f74d92735b75" category="list-text">処理とメモリ：2 つの vCPU と 8 GiB RAM を備えた m5.large VM または同等のもの。</block>
-  <block id="c7ca991550b74c4fb5521603081f476c" category="list-text">推奨オペレーティングシステム：最適な互換性を実現するUbuntu 22.04。</block>
   <block id="28a03eb4af7c5f6abf99620ada6c6cfb" category="list-text">ストレージ：仮想マシンが侵害された場合にデータを確実に保存できるように、最低100GBのルートボリュームと、少なくとも100GBの追加NFSボリュームを用意します。</block>
   <block id="492b15c109a51daa9f89630b4f2bb303" category="list-text">ホスティング要件：ツールの自動更新を可能にするために、クラスター接続とインターネットアクセスのある場所にVMを配置します。自動更新を実行するには、マシンがHTTPS経由で次のエンドポイントにアクセスできる必要があります：</block>
   <block id="072b499eacb5befcbdab2d6cc0fe02a0" category="list-text"><block ref="072b499eacb5befcbdab2d6cc0fe02a0" category="inline-link-rx"></block></block>
@@ -101,7 +98,6 @@
   <block id="9f58de4245b2fb930c02c3766a7ff23f" category="list-text">ONTAP クラスタアクセス用のサービスアカウントとロールを設定します。Upgrade Health Checker を介したクラスタアクセスの場合は、サービスロールを REST ロールとして作成します。</block>
   <block id="15ec8997d97cf2ca0a22a65e524b2811" category="admonition">Ansibleプレイブックを構築して、すべてのONTAPクラスタへのロールとユーザの導入を自動化できます。</block>
   <block id="d9e228dba301308afb2b46a1a951b363" category="paragraph">http アプリケーションのサービスアカウントを作成する必要があります。必要な権限を設定するには、次の CLI コマンドを使用します：</block>
-  <block id="c8bb94969a3153538fe3ed12d5ad5c4f" category="list-text">アプリケーションへのアクセスを保護するためにクレデンシャル管理を設定します。</block>
   <block id="034a1ea726a7fbf3e2fc72fde8ed680d" category="paragraph">例えば、CyberArkとConjurを使用すると、yamlファイルまたはコマンドラインを介して資格情報を渡さないように環境を構成できます。</block>
   <block id="f2f2f12c645a941c4c701a0ad14f78da" category="list-text">必要なCyberArk金庫を作成：</block>
   <block id="6fecc57bc25e97c77bad1c6d06e7153d" category="list-text">アプリケーションの資格情報とシークレットを保持するSafe（Main-Conjur-Safe）を作成します</block>
@@ -232,4 +228,14 @@
   <block id="d8f8bff1a4b83b3c4aa6b4284a2e39c2" category="section-title">2026年2月13日</block>
   <block id="f245d5b92eabff0d1c1d1e41530987d0" category="list-text">アップグレードレポートを確実に作成するには、<block ref="6489edbb98d22789fa797cea6950f9bd" category="inline-link-macro-rx"></block>に記載されている必要な設定手順と1回限りのタスクを完了してください。</block>
   <block id="4a5a50ece5ac2f055b9ecb1ac0f449f2" category="paragraph">ただし、ツールの自動更新にはインターネットアクセスが必要です。お使いの環境にインターネット接続がない場合は、<block ref="886a64ecc1d4032be9eb5d1da893e684" category="inline-link-macro-rx"></block>のUpgrade Health Checkerタイルから最新バージョンのツールを手動でダウンロードできます。</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">タスク概要</block>
+  <block id="3a3843b2672bd389702bef2d50b13ac2" category="inline-link-macro">Cloud Volumes ONTAPのアップグレード</block>
+  <block id="fbea9b709f9869db351058e2990a8978" category="paragraph">Upgrade Health Checkerは、オンプレミスONTAPバージョン9.11.1以降のアップグレードをサポートしています。Cloud Volumes ONTAPを使用している場合は、システムのアップグレードに関する情報について<block ref="28b2d523b3cffe11b9614de34794e1ab" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="d2c961c08b2b0c36adb33c10963a0eb6" category="paragraph">Upgrade Health Checker は、オンプレミス ONTAP 9.11.1 以降のアップグレードをサポートします。</block>
+  <block id="bef81ef7170eb4c509a54d4673a85016" category="paragraph">Upgrade Health Checkerの詳細については、<block ref="6a92c3eccbf08c1bc6caa0a6e92c02bb" category="inline-link-macro-rx"></block>を参照するか、以下の紹介ビデオをご覧ください。</block>
+  <block id="c2aacd91b1737e52a658e8a6f26cab08" category="list-text">推奨オペレーティングシステム：最適な互換性を確保するため、glibcライブラリのバージョン2.28以降を搭載したLinux OS。これには以下が含まれます：</block>
+  <block id="e5051949dc3a37f9077e85df0f1c8a21" category="list-text">Ubuntu 22.04</block>
+  <block id="131e01e2ecbd7de2f9b3f16afa129bcd" category="list-text">RHEL8</block>
+  <block id="100147deec73dd6ee82e8d75ab8b4981" category="list-text">RHEL9</block>
+  <block id="3d814f055016b0a5f8d3fd580ea0225d" category="list-text">（オプション）アプリケーションへのアクセスを保護するために、認証情報管理を設定します。</block>
 </blocks>

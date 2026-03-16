@@ -41,4 +41,4 @@ Upgrade Health Checkerを実行するにはインターネット接続は必要�
 
 == Upgrade Health CheckerはどのバージョンのONTAPをサポートしていますか？
 
-アップグレードヘルスチェッカーは、ONTAP 9.11.1 以降へのアップグレードをサポートします。
+Upgrade Health Checker は、オンプレミス ONTAP 9.11.1 以降のアップグレードをサポートします。
