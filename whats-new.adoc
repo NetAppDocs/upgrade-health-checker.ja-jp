@@ -17,6 +17,25 @@ Upgrade Health Checkerの新機能について説明します。追加の拡張�
 
 
 
+== 2026年4月15日
+
+今回のアップグレードヘルスチェッカーのドキュメント更新には、以下の機能が含まれています。
+
+* UHC は、自動更新機能を動作させるために、新しいエンドポイント(https://api.activeiq.netapp.com[]へのアクセスが必要です。
++
+link:set-up-upgrade-health-checker.html["Upgrade Health Checkerをダウンロードしてセットアップする"]。
+
+* UHCは、HTML（人間が読める形式）およびJSON（機械が読める形式）を補完する新しいレポート形式（.XLSX - 人間が編集可能な形式）を提供するようになりました。
++
+link:generate-report-upgrade-health-checker.html["ONTAPアップグレードレポートを生成する"]。
+
++
+link:automate-report-upgrade-health-checker.html["Upgrade Health Checkerでアップグレード計画の生成を自動化"]。
+
+
+
+
+
 == 2026年2月13日
 
 Upgrade Health Checkerは、包括的なオンサイトレポートを生成する新しいソリューションを提供し、ONTAPアップグレードを成功させることができます。既存の自動化およびオーケストレーションフレームワークと併用することで、単一または複数のクラスタをアップグレードする際の効率を高めることができます。Upgrade Health Checkerは、ONTAP 9.11.1以降へのアップグレードをサポートします。

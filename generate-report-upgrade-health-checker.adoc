@@ -45,8 +45,8 @@ NOTE: Upgrade Health Checkerは自己完結型パッケージであるため、�
 
 +
 ** HTTPS経由のONTAPクラスターIPアドレスへの接続性
-** HTTPS経由でのテレメトリエンドポイント(https://support.netapp.com/[]への接続
-** 自動更新エンドポイント（(https://api.uhc.netapp.com[]および https://gql.aiq.netapp.com[]）へのHTTPS経由の接続
+** HTTPS経由でテレメトリエンドポイント（(https://support.netapp.com/[]および https://api.activeiq.netapp.com[]）への接続
+** 自動更新エンドポイントへの接続（(https://api.uhc.netapp.com[]、 https://gql.aiq.netapp.com[]、および https://api.activeiq.netapp.com[]）HTTPS（443）経由
 ** 少なくとも4GBの空き `/tmp`容量
 
 
@@ -95,13 +95,15 @@ Input Parameters Guideには、ワークフローを効率化するためのカ�
 
 NOTE: プログラムの各実行は「ユニークな実行」であり、関連するすべてのデータ、ログ、結果が関連する `runs`フォルダに保存されます。
 
-. レポートファイル（ `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`という名前）をWebブラウザで開いてレポートを表示します。リモートホストで実行している場合は、まず、Webブラウザでレポートを表示できるマシンにレポートファイルをダウンロードします。
+. レポートファイル（名前は `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`）をWebブラウザ、Microsoft Excel、またはJSONビューアで開いてレポートを表示します。リモートホストで実行している場合は、まずレポートファイルを、Webブラウザ、Excel、またはJSONビューアでレポートを表示できるマシンにダウンロードしてください。
 +
 ログパスとレポートパスは次のとおりです：
 
 +
 ** ログパス： `<output-path>/<unique-run-dir>/<cluster-name>/logs`
-** レポートパス： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** HTMLレポートのパス： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Excelレポートのパス： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.xlsx`
+** JSONレポートのパス： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.json`
 
 
 

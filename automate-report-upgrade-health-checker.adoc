@@ -58,13 +58,15 @@ Cronジョブ：
 
 NOTE: プログラムの各実行は固有の実行であり、関連するすべてのデータ、ログ、および結果が関連する `runs`フォルダに保存されます。
 
-. レポートファイル（ `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`という名前）をWebブラウザで開いてレポートを表示します。リモートホストでUpgrade Health Checkerを実行している場合は、まずWebブラウザで表示できるマシンにレポートファイルをダウンロードします。
+. レポートファイル（名前は `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`）をWebブラウザ、Microsoft Excel、またはJSONビューアで開いてレポートを表示します。Upgrade Health Checkerをリモートホストで実行している場合は、まずレポートファイルを、Webブラウザ、Excel、またはJSONビューアでレポートを表示できるマシンにダウンロードしてください。
 +
 ログパスとレポートパスは次のとおりです：
 
 +
 ** ログパス： `<output-path>/<unique-run-dir>/<cluster-name>/logs`
-** レポートパス： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** HTMLレポートのパス： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Excelレポートのパス： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.xlsx`
+** JSONレポートのパス： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.json`
 
 
 
