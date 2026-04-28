@@ -248,4 +248,5 @@
   <block id="b729a38666412b046926504f8c6e0c22" category="list-text">UHCは、HTML（人間が読める形式）およびJSON（機械が読める形式）を補完する新しいレポート形式（.XLSX - 人間が編集可能な形式）を提供するようになりました。</block>
   <block id="28644c8986780297cc12f67e6e53c6e9" category="paragraph"><block ref="6489edbb98d22789fa797cea6950f9bd" category="inline-link-macro-rx"></block>。</block>
   <block id="188972059fe3b72a4a06d5b2f9a9f5e8" category="paragraph"><block ref="2351634b2585980a03146a4b76c86b91" category="inline-link-macro-rx"></block>。</block>
+  <block id="14bcc4201c40840cb4def541b49a3f32" category="sidebar">NetApp Lab on Demand を使用したアップグレードヘルスチェッカーの使用を開始する</block>
 </blocks>
