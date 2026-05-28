@@ -45,8 +45,8 @@ NOTE: Upgrade Health Checkerは自己完結型パッケージであるため、�
 
 +
 ** HTTPS経由のONTAPクラスターIPアドレスへの接続性
-** HTTPS経由でテレメトリエンドポイント（(https://support.netapp.com/[]および https://api.activeiq.netapp.com[]）への接続
-** 自動更新エンドポイントへの接続（(https://api.uhc.netapp.com[]、 https://gql.aiq.netapp.com[]、および https://api.activeiq.netapp.com[]）HTTPS（443）経由
+** HTTPS経由でのテレメトリエンドポイント（+https://support.netapp.com/+および+https://api.activeiq.netapp.com+）への接続
+** 自動更新エンドポイントへの接続（+https://api.uhc.netapp.com+、+https://gql.aiq.netapp.com+、および +https://api.activeiq.netapp.com+）HTTPS経由（443）
 ** 少なくとも4GBの空き `/tmp`容量
 
 

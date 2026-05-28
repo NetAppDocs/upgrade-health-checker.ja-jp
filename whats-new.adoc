@@ -21,7 +21,7 @@ Upgrade Health Checkerの新機能について説明します。追加の拡張�
 
 今回のアップグレードヘルスチェッカーのドキュメント更新には、以下の機能が含まれています。
 
-* UHC は、自動更新機能を動作させるために、新しいエンドポイント(https://api.activeiq.netapp.com[]へのアクセスが必要です。
+* UHC が自動更新機能を動作させるには、新しいエンドポイント (+https://api.activeiq.netapp.com+) へのアクセスが必要です。
 +
 link:set-up-upgrade-health-checker.html["Upgrade Health Checkerをダウンロードしてセットアップする"]。
 

@@ -32,9 +32,9 @@ Upgrade Health Checkerは、オンプレミスONTAPバージョン9.11.1以降�
 * ストレージ：仮想マシンが侵害された場合にデータを確実に保存できるように、最低100GBのルートボリュームと、少なくとも100GBの追加NFSボリュームを用意します。
 * ホスティング要件：VMは、クラスタ接続とインターネットアクセスが可能な場所に配置してください。これにより、ツールの自動更新が可能になります。自動更新を実行するために、マシンはHTTPS（443）経由で以下のエンドポイントにアクセスできる必要があります：
 +
-** https://api.uhc.netapp.com[]
-** https://gql.aiq.netapp.com[]
-** https://api.activeiq.netapp.com[]
+** +https://api.uhc.netapp.com+
+** +https://gql.aiq.netapp.com+
+** +https://api.activeiq.netapp.com+
 +
 インターネットにアクセスできない場合は、NetAppにガイダンスをお問い合わせください。
 
@@ -43,7 +43,7 @@ Upgrade Health Checkerは、オンプレミスONTAPバージョン9.11.1以降�
 * 推奨パッケージ：アクセスを容易にするために Web サーバーをインストールします。
 
 
-さらに、仮想マシンがテレメトリエンドポイント(https://support.netapp.com/[]および https://api.activeiq.netapp.com[]）にHTTPS経由で接続できることを確認し、NetAppがアップグレードプランに関するAutoSupport情報を受信できるようにします。
+さらに、仮想マシンがHTTPS経由でテレメトリエンドポイント（+https://support.netapp.com+/および+https://api.activeiq.netapp.com+）に接続できることを確認し、NetAppがアップグレードプランに関するAutoSupport情報を受信できるようにしてください。
 
 .手順
 . アップグレードヘルスチェッカーのバイナリをダウンロードするには、link:https://console.netapp.com/automationHub["NetApp Console Automation Hubに移動"]Upgrade Health Checkerタイルを見つけます。
