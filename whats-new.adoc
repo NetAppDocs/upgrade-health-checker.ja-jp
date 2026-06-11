@@ -1,5 +1,5 @@
 ---
-sidebar: sidebar 
+sidebar: sidebarU 
 permalink: whats-new.html 
 keywords: upgrade, health, checker, whats new, release, notes 
 summary: このドキュメントサイトの新機能について学習します。 
@@ -13,7 +13,39 @@ summary: このドキュメントサイトの新機能について学習しま�
 
 
 [role="lead"]
-Upgrade Health Checkerの新機能について説明します。追加の拡張機能情報については、link:https://console.netapp.com/automationHub["NetApp Console自動化ハブ"^]のUpgrade Health Checkerタイルに移動して、最新のUpgrade Health Checkerダウンロードファイルを表示してください。
+Upgrade Health Checker（UHC）の新機能について説明します。link:https://console.netapp.com/automationHub["NetApp Console自動化ハブ"^]でUpgrade Health Checkerタイルに移動し、最新のUpgrade Health Checkerダウンロードファイルを表示すると、追加の機能強化情報を確認できます。
+
+
+
+== 2026年6月11日
+
+今回のアップグレードヘルスチェッカーのドキュメント更新には、以下の機能が含まれています。
+
+* UHCは、レポートを受信トレイに直接配信することをサポートしています。
++
+link:setup-email-upgrade-health-checker.html["アップグレードヘルスチェッカーレポートをメールで受信"].
+
+*  `--dashboard`パラメータを導入します。このパラメータは、クラスタに接続することなく、 `<runs>/dashboard/index.html`の既存の実行からダッシュボードを再生成します。最近アクセスされたすべてのクラスタの健全性ステータスの概要を提供します。
++
+link:dashboard-upgrade-health-checker.html["Health Checkerダッシュボードのアップグレード"]、link:upgrade-health-checker-input-parameters.html#dashboard["ダッシュボードパラメータ"]。
+
+* 新たに「メンテナンス」「トラブルシューティング」「よくある質問」セクションを追加しました。
++
+** アップグレードヘルスチェッカーを常に良好な状態に保つには、定期的にアップデートを確認し、ログを監視して繰り返し発生する問題がないかを確認し、ツールがご使用の環境に合わせて正しく構成されていることを確認してください。
++
+link:maintain-upgrade-health-checker.html["アップグレードヘルスチェッカーのメンテナンス"].
+
+** Upgrade Health Checkerの一般的な問題のトラブルシューティングを行い、ONTAPアップグレード計画をブロックする可能性のあるエラーを解決します。
++
+link:troubleshoot-upgrade-health-checker.html["アップグレードヘルスチェッカーのトラブルシューティング"].
+
+** Upgrade Health Checker に関するよくある質問（FAQ）。
++
+link:faq-upgrade-health-checker.html["Upgrade Health Checkerに関するFAQ"].
+
+
+
+
 
 
 

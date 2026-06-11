@@ -300,6 +300,29 @@ CLUSTER:
 ====
 
 
+=== [ダッシュボード]
+
+ `--dashboard`パラメータは、クラスタに接続することなく、 `<runs>/dashboard/index.html`の既存の実行からダッシュボードを再生成します。通常の実行以外でフリートビューを更新する場合に使用します。ダッシュボードには、最近評価されたすべてのクラスタの健全性ステータスの概要が表示され、複数のクラスタのアップグレード準備状況を1か所で簡単に監視および比較できます。Webブラウザでダッシュボードを開くと、各クラスタの健全性ステータス、潜在的な阻害要因、およびリスクを一目で確認できます。
+
+* CLI引数： `--dashboard`
+
+
+.例
+[%collapsible]
+====
+* CLI引数：
++
+[listing]
+----
+./uhc --dashboard
+./uhc --dashboard --runs-path /custom/output
+./uhc --dashboard --config-path /path/to/custom_config.yaml
+----
+
+
+====
+
+
 === テレメトリを無効にする
 
 テレメトリを無効にするには、次の行を `config.yaml`ファイルに追加します：

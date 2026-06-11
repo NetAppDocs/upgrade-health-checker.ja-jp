@@ -11,6 +11,8 @@ indexpage:
       url: learn-about-upgrade-health-checker.html
     - title: アップグレードヘルスチェッカーを設定する
       url: set-up-upgrade-health-checker.html
+    - title: Upgrade Health Checkerの入力パラメータについて学ぶ
+      url: upgrade-health-checker-input-parameters.html
   - title: アップグレードヘルスチェッカーを使用する
     links:
     - title: ONTAPアップグレードレポートを生成する
@@ -19,9 +21,11 @@ indexpage:
       url: automate-report-upgrade-health-checker.html
   - title: その他のリソース
     links:
-    - title: Upgrade Health Checkerの入力パラメータについて学ぶ
-      url: upgrade-health-checker-input-parameters.html
     - title: NetApp Lab on Demand を使用したアップグレードヘルスチェッカーの使用を開始する
       url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Getting-Started-with-Upgrade-Health-Checker-Using-NetApp-Lab-on-Demand/ba-p/466818
+    - title: アップグレードヘルスチェッカーのメンテナンス
+      url: maintain-upgrade-health-checker.html
+    - title: アップグレードヘルスチェッカーのトラブルシューティング
+      url: troubleshoot-upgrade-health-checker.html
     - title: Upgrade Health Checkerに関するFAQ
       url: faq-upgrade-health-checker.html

@@ -1,0 +1,316 @@
+---
+sidebar: sidebar 
+permalink: troubleshoot-upgrade-health-checker.html 
+keywords: upgrade, health, checker, troubleshoot, issues, errors, ontap 
+summary: アップグレードヘルスチェッカーのトラブルシューティング：ONTAPアップグレードに関する一般的な問題、エラー、および解決策。 
+---
+= アップグレードヘルスチェッカーのトラブルシューティング
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+アップグレードヘルスチェッカーの一般的な問題のトラブルシューティング方法と、ONTAPアップグレード計画をブロックする可能性のあるエラーの解決方法を学びましょう。
+
+
+
+== 問題のトラブルシューティング
+
+{empty} + {empty}
+
+
+
+=== 問題：認証または資格情報エラー
+
+*症状：*
+
+[listing]
+----
+Failed to fetch cluster details for <cluster-ip>
+Error connecting to ONTAP cluster: 401 Unauthorized
+Missing cluster credentials
+----
+これらのエラーは、Upgrade Health Checkerが提供された認証情報を使用してONTAPクラスタで認証できないことを示しています。これは、ユーザ名またはパスワードが正しくない、ユーザアカウントの権限が不十分である、またはアカウントがロックまたは無効になっていることが原因である可能性があります。
+
+*解決策：*
+
+* ユーザー名とパスワードが正しいことを確認してください
+* ユーザに十分なONTAP REST API権限があることを確認します
+* アカウントがロックされているか無効になっているかを確認してください
+
+
+[listing]
+----
+./uhc --test-connectivity cluster
+----
+{empty} + {empty}
+
+
+
+=== 問題：自動更新が失敗しました
+
+*症状：*
+
+[listing]
+----
+Auto-update failed: ...
+Failed to download update
+----
+これらのエラーは、Upgrade Health Checkerがインターネットに接続してアップデートを確認またはダウンロードできないことを示しています。これは、ネットワーク接続の問題、アクセスをブロックするファイアウォールルール、または正しく設定されていないプロキシ設定が原因である可能性があります。
+
+*解決策：*
+
+* インターネット接続を確認してください：
+
+
+[listing]
+----
+./uhc --test-connectivity autoupdate
+----
+* ディスク容量を確認してください（1GB必要です）：
+
+
+[listing]
+----
+df -h <location of uhc>
+----
+{empty} {empty}
+
+
+
+=== 問題：バイナリの起動に時間がかかります
+
+*原因：* このバイナリは自己完結型であり、実行前に自身を解凍する必要があります。
+
+*想定される動作：*初回実行時には読み込みに数秒かかる場合があります。これは正常なことです。{empty} + {empty} + {empty}
+
+
+
+=== 問題：/tmp で「アクセスが拒否されました」または「バイナリを実行できません」というエラーが発生します。
+
+*症状：*
+
+[listing]
+----
+[Errno 13] Permission denied
+OSError: [Errno 13] Permission denied: '/tmp/_MEI...'
+Cannot execute binary file
+----
+このエラーは、ツールのコンポーネントを抽出して実行するために使用される `/tmp`ディレクトリでツールがファイルを実行できない場合に発生する可能性があります。これは、 `/tmp`ディレクトリに対する制限的な権限、またはこの場所からの実行を禁止するセキュリティポリシーが原因である可能性があります。
+
+*解決策：*
+
+.  `/tmp`に `noexec`が有効になっているかどうかを確認します：
+
+
+[listing]
+----
+mount | grep /tmp
+# If you see noexec in the output, this is the issue.
+----
+. [[step2]]  `/tmp`を `exec`で再マウント（システム管理者のroot権限が必要）：
+
+
+[listing]
+----
+# Temporary fix
+sudo mount -o remount,exec /tmp
+# Permanent fix - edit /etc/fstab
+# Change "noexec" to "exec" for /tmp mount point
+----
+. [[step3]] 制約により前のステップを実行できない場合は、適切な権限を持つ代替の一時ディレクトリを使用するようにツールを設定できます：
+
+
+[listing]
+----
+mkdir -p /custom-tmp-path
+# This only needs to be done one time.
+TMPDIR=/custom-tmp-path ./uhc
+# The TMPDIR prefix has to be added every time.
+----
+
+NOTE: この回避策を機能させるには、まずカスタムパスが存在している必要があります。まだ存在しない場合は作成されず、 `/tmp`の使用にフォールバックします。
+
+. [[step4]] 権限を調整したり、一時ディレクトリを変更したりした後、ツールを再度実行して問題が解決したかどうかを確認してください。+
+
+
+
+
+=== 問題：接続タイムアウト
+
+*症状：*
+
+[listing]
+----
+Connection timeout
+Request timeout
+----
+*解決策：*
+
+* クラスタへのネットワーク接続を確認
+* ファイアウォールがHTTPS（443）トラフィックをブロックしていないことを確認してください。
+* クラスタが応答しており、過負荷状態になっていないことを確認してください。
+
+
+
+
+=== 問題：ディスク容量が不足しています
+
+*症状：*
+
+[listing]
+----
+Not enough disk space available
+OSError: [Errno 28] No space left on device
+----
+*解決策：*
+
+* ディスク容量を確認：
+
+
+[listing]
+----
+df -h /tmp
+df -h .
+----
+* 古い実行をクリーンアップ：
+
+
+[listing]
+----
+# Remove old run directories
+rm -rf runs/<old_run_directories>
+----
+* 一時ファイルをクリーンアップする：
+
+
+[listing]
+----
+# Remove temporary files
+rm -rf /tmp/_MEI*
+----
+{empty} + {empty}
+
+
+
+=== 問題：無効な実行パス
+
+*症状：*
+
+[listing]
+----
+Invalid basepath_runs: <error>
+RUNS path is not set
+Cannot create tarball: basepath_runs '<path>' does not exist
+----
+*解決策：*
+
+* 実行出力ディレクトリが存在し、書き込み可能であることを確認してください。
+* CLI経由で有効なパスを指定してください： `--runs-path /valid/path`
+* config.yamlで設定： `APP.RUNS_PATH: "/valid/path"` +
+
+
+
+
+=== 問題：無効なターゲット ONTAP バージョン
+
+*症状：*
+
+[listing]
+----
+Invalid ONTAP version: '<version>' does not exist
+Invalid ONTAP version: '<version>' is not a recognized ONTAP version
+Downgrade is not supported. Target version must be greater than or equal to the current version.
+----
+*解決策：*
+
+* ターゲットバージョンの文字列形式を確認してください（例：「9.16.1」）
+* ターゲットバージョンが現在のクラスタバージョン以上であることを確認してください。
+* 既存のONTAPバージョンを維持するには「current」を使用します: `--target-ontap-version=current` +
+
+
+
+
+=== 問題：署名検証に失敗しました
+
+*症状：*
+
+[listing]
+----
+Signature verification failed
+Invalid code signature
+----
+*原因：* ダウンロードしたアップデートファイルが破損しているか、改ざんされている可能性があります。
+
+*解決策：*
+
+* 手動アップデート - NetAppサポートサイトからダウンロード
+* 署名を手動で確認：
++
+[listing]
+----
+openssl dgst -sha256 -verify UHC-Linux-public.pub -signature uhc.sig uhc
+----
++
+{empty} + {empty}
+
+
+
+
+
+=== 問題：テレメトリのアップロードに失敗しました
+
+*症状：*
+
+[listing]
+----
+body.7z upload failed
+Telemetry endpoint is not reachable
+----
+*解決策：*
+
+* テレメトリエンドポイントへの接続を確認してください：
+
+
+[listing]
+----
+./uhc --test-connectivity telemetry
+----
+{empty} + {empty}
+
+
+
+=== 問題：「更新中」ロックファイル
+
+*症状：*
+
+[]
+====
+更新作業中
+
+UHCの自動アップデートの別のインスタンスが現在実行中です。再度実行する前に、アップデートが完了するまでお待ちください。
+
+====
+*原因：* 前回の更新プロセスからロックファイルが存在します。
+
+*解決策：*
+
+. *お待ちください：* アップデートは通常1～2分で完了します。
+. *古いかどうかを確認してください：*（1時間後に自動的にクリーンアップされます）：
+
+
+[listing]
+----
+ls -la uhc_update.lock
+# If older than 1 hour, it will be auto-cleaned
+----
+. [[step3]] *必要に応じて手動でクリーンアップします。*
+
+
+[listing]
+----
+rm uhc_update.lock
+----

@@ -21,15 +21,25 @@ sidebar:
       url: "/learn-about-upgrade-health-checker.html"
     - title: アップグレードヘルスチェッカーを設定する
       url: "/set-up-upgrade-health-checker.html"
+    - title: Upgrade Health Checkerの入力パラメータ
+      url: "/upgrade-health-checker-input-parameters.html"
   - title: アップグレードヘルスチェッカーを使用する
     entries:
     - title: ONTAPアップグレードレポートを生成する
       url: "/generate-report-upgrade-health-checker.html"
+    - title: Health Checkerダッシュボードのアップグレード
+      url: "/dashboard-upgrade-health-checker.html"
     - title: レポート生成を自動化
       url: "/automate-report-upgrade-health-checker.html"
-  - title: Upgrade Health Checkerの入力パラメータ
-    url: "/upgrade-health-checker-input-parameters.html"
-  - title: FAQ
-    url: "/faq-upgrade-health-checker.html"
+    - title: メールでレポートを受信するように設定します
+      url: "/setup-email-upgrade-health-checker.html"
+  - title: 保守、トラブルシューティング、FAQ
+    entries:
+    - title: メンテナンス
+      url: "/maintain-upgrade-health-checker.html"
+    - title: トラブルシューティング
+      url: "/troubleshoot-upgrade-health-checker.html"
+    - title: FAQ
+      url: "/faq-upgrade-health-checker.html"
   - title: 法律上の表示
     url: "/legal-notices.html"

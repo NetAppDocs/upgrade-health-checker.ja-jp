@@ -21,32 +21,49 @@ Upgrade Health Checkerは、オンプレミスONTAPバージョン9.11.1以降�
 .開始する前に
 次の仕様で、Upgrade Health Checker用の仮想マシンをセットアップします：
 
-* 処理とメモリ：2 つの vCPU と 8 GiB RAM を備えた m5.large VM または同等のもの。
-* 推奨オペレーティングシステム：最適な互換性を確保するため、glibcライブラリのバージョン2.28以降を搭載したLinux OS。これには以下が含まれます：
-+
-** Ubuntu 22.04
-** RHEL8
-** RHEL9
+|===
+| コンポーネント | 仕様詳細 
 
 
-* ストレージ：仮想マシンが侵害された場合にデータを確実に保存できるように、最低100GBのルートボリュームと、少なくとも100GBの追加NFSボリュームを用意します。
-* ホスティング要件：VMは、クラスタ接続とインターネットアクセスが可能な場所に配置してください。これにより、ツールの自動更新が可能になります。自動更新を実行するために、マシンはHTTPS（443）経由で以下のエンドポイントにアクセスできる必要があります：
-+
-** +https://api.uhc.netapp.com+
-** +https://gql.aiq.netapp.com+
-** +https://api.activeiq.netapp.com+
-+
-インターネットにアクセスできない場合は、NetAppにガイダンスをお問い合わせください。
+ a| 
+*VM*
+| m5.large VM、または2つのvCPUと8 GiBのRAMを搭載した同等のVM 
 
 
+ a| 
+*オペレーティングシステム*
+| glibcライブラリのバージョン2.28以降を搭載したLinux OS（Ubuntu 22.04、RHEL8、またはRHEL9） 
 
-* 推奨パッケージ：アクセスを容易にするために Web サーバーをインストールします。
+
+ a| 
+*ディスク容量*
+|  `/tmp`に実行権限を持つ少なくとも4GBの空き容量（8GB推奨） 
 
 
-さらに、仮想マシンがHTTPS経由でテレメトリエンドポイント（+https://support.netapp.com+/および+https://api.activeiq.netapp.com+）に接続できることを確認し、NetAppがアップグレードプランに関するAutoSupport情報を受信できるようにしてください。
+ a| 
+*ネットワーク*
+| ONTAPクラスタ管理LIFへのHTTPS接続 
+
+
+ a| 
+*ONTAPバージョン*
+| ONTAP 9.11.1以降を実行しているクラスター 
+
+
+ a| 
+*ホスティング要件*
+| 仮想マシンは、クラスタ接続とインターネットアクセスが可能な場所に配置して、ツールの自動更新を可能にしてください。マシンは、自動更新を実行し、NetAppがアップグレードプランに関するAutoSupport情報を受信できるようにするために、HTTPS（443）を介して以下のエンドポイントにアクセスできる必要があります：https://support.netapp.com/[] https://api.uhc.netapp.com[] https://gql.aiq.netapp.com[] https://api.activeiq.netapp.com[] 
+
+
+ a| 
+*推奨パッケージ*
+| アクセスを容易にするためにWebサーバをインストールします 
+|===
+
+NOTE: 仮想マシンが自動更新エンドポイントとテレメトリエンドポイント（(https://support.netapp.com/[]および https://api.activeiq.netapp.com[]）にHTTPS（443）経由で接続できることを確認し、NetAppがアップグレードプランに関するAutoSupport情報を受信できるようにします。インターネットアクセスが利用できない場合は、Upgrade Health Checkerの最新バージョンを手動でダウンロードする必要があります。
 
 .手順
-. アップグレードヘルスチェッカーのバイナリをダウンロードするには、link:https://console.netapp.com/automationHub["NetApp Console Automation Hubに移動"]Upgrade Health Checkerタイルを見つけます。
+. link:https://console.netapp.com/automationHub["NetApp Console自動化ハブ"^]に移動し、Upgrade Health Checkerタイルを見つけて、Upgrade Health Checkerバイナリをダウンロードします。
 . Upgrade Health Checker 仮想マシンをセットアップし、SSH を使用してバイナリを任意の場所に配置します。
 . Upgrade Health Checkerのデジタル署名を検証します。
 +
@@ -85,7 +102,7 @@ openssl dgst -sha256 -verify UHC-Linux-public.pub -signature uhc.sig uhc
 NOTE: Ansibleプレイブックを構築して、すべてのONTAPクラスタへのロールとユーザの導入を自動化できます。
 
 +
-http アプリケーションのサービスアカウントを作成する必要があります。必要な権限を設定するには、次の CLI コマンドを使用します：
+HTTPアプリケーション用のサービスアカウントを作成する必要があります。必要な権限を設定するには、以下のCLIコマンドを使用してください：
 
 +
 [source, cli]
@@ -156,6 +173,10 @@ conjur_password: "{{ lookup('cyberark.conjur.conjur_variable', 'prodvault/devops
 ----
 
 
+
+
+.関連情報
+* link:upgrade-health-checker-input-parameters.html["Upgrade Health Checkerの入力パラメータについて学ぶ"]
 
 
 .次の手順
