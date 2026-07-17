@@ -17,8 +17,12 @@ indexpage:
     links:
     - title: ONTAPアップグレードレポートを生成する
       url: generate-report-upgrade-health-checker.html
+    - title: Health Checkerダッシュボードのアップグレード
+      url: dashboard-upgrade-health-checker.html
     - title: レポート生成を自動化
       url: automate-report-upgrade-health-checker.html
+    - title: レポートをメールで受け取る
+      url: setup-email-upgrade-health-checker.html
   - title: その他のリソース
     links:
     - title: NetApp Lab on Demand を使用したアップグレードヘルスチェッカーの使用を開始する

@@ -17,12 +17,14 @@ summary: アップグレードヘルスチェッカーのトラブルシュー�
 
 
 
+[[troubleshoot-issues]]
 == 問題のトラブルシューティング
 
 {empty} + {empty}
 
 
 
+[[issue-authentication-or-credential-errors]]
 === 問題：認証または資格情報エラー
 
 *症状：*
@@ -50,6 +52,7 @@ Missing cluster credentials
 
 
 
+[[issue-auto-update-fails]]
 === 問題：自動更新が失敗しました
 
 *症状：*
@@ -81,6 +84,7 @@ df -h <location of uhc>
 
 
 
+[[issue-binary-takes-a-long-time-to-start]]
 === 問題：バイナリの起動に時間がかかります
 
 *原因：* このバイナリは自己完結型であり、実行前に自身を解凍する必要があります。
@@ -89,6 +93,7 @@ df -h <location of uhc>
 
 
 
+[[issue-permission-denied-or-cannot-execute-binary-on-tmp]]
 === 問題：/tmp で「アクセスが拒否されました」または「バイナリを実行できません」というエラーが発生します。
 
 *症状：*
@@ -139,6 +144,7 @@ NOTE: この回避策を機能させるには、まずカスタムパスが存�
 
 
 
+[[issue-connection-timeout]]
 === 問題：接続タイムアウト
 
 *症状：*
@@ -157,6 +163,7 @@ Request timeout
 
 
 
+[[issue-insufficient-disk-space]]
 === 問題：ディスク容量が不足しています
 
 *症状：*
@@ -196,6 +203,7 @@ rm -rf /tmp/_MEI*
 
 
 
+[[issue-invalid-runs-path]]
 === 問題：無効な実行パス
 
 *症状：*
@@ -215,6 +223,7 @@ Cannot create tarball: basepath_runs '<path>' does not exist
 
 
 
+[[issue-invalid-target-ontap-version]]
 === 問題：無効なターゲット ONTAP バージョン
 
 *症状：*
@@ -234,6 +243,7 @@ Downgrade is not supported. Target version must be greater than or equal to the 
 
 
 
+[[issue-signature-verification-fails]]
 === 問題：署名検証に失敗しました
 
 *症状：*
@@ -261,6 +271,7 @@ openssl dgst -sha256 -verify UHC-Linux-public.pub -signature uhc.sig uhc
 
 
 
+[[issue-telemetry-upload-failure]]
 === 問題：テレメトリのアップロードに失敗しました
 
 *症状：*
@@ -283,6 +294,7 @@ Telemetry endpoint is not reachable
 
 
 
+[[issue-update-in-progress-lock-file]]
 === 問題：「更新中」ロックファイル
 
 *症状：*

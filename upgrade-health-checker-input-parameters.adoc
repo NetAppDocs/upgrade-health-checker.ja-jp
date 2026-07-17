@@ -17,6 +17,7 @@ Upgrade Health Checkerの入力パラメータと、CLI引数、設定ファイ�
 
 
 
+[[input-methods-priority]]
 == 入力方法の優先順位
 
 Upgrade Health Checker では、すべてのパラメータに対していくつかの入力オプションが提供されます。入力を受け入れる優先順位は次のとおりです：
@@ -30,10 +31,12 @@ Upgrade Health Checker では、すべてのパラメータに対していくつ
 
 
 
+[[input-parameters]]
 == 入力パラメータ
 
 
 
+[[cluster-ip]]
 === クラスタ IP
 
  `--cluster-ip`パラメータは、接続先のONTAPクラスタのIPアドレスまたはホスト名を指定します。
@@ -68,6 +71,7 @@ CLUSTER:
 ====
 
 
+[[cluster-username]]
 === クラスタのユーザ名
 
  `--cluster-username`パラメータは、ONTAPクラスタでの認証に使用するユーザー名を指定します。
@@ -102,6 +106,7 @@ CLUSTER:
 ====
 
 
+[[cluster-password]]
 === クラスタパスワード
 
  `--cluster-password`パラメータは、ONTAPクラスタでの認証用のパスワードを指定します。
@@ -136,6 +141,7 @@ CLUSTER:
 ====
 
 
+[[target-ontap-version]]
 === ターゲット ONTAP バージョン
 
  `--target-ontap-version`パラメータは、分析のためにアップグレードする ONTAP バージョンを指定します。既存のクラスタの ONTAP バージョンを維持するには「current」を使用します。
@@ -173,6 +179,7 @@ CLUSTER:
 ====
 
 
+[[accept-eula]]
 === EULAに同意する
 
  `--accept-eula`パラメータは、エンドユーザーライセンス契約に同意するかどうかを指定します。 `true`に設定する必要があります。
@@ -207,6 +214,7 @@ CLUSTER:
 ====
 
 
+[[configuration-file-path]]
 === 設定ファイルのパス
 
  `--config-path`パラメーターは、カスタム構成 YAML ファイルへのパスを指定します。
@@ -233,6 +241,7 @@ CLUSTER:
 ====
 
 
+[[run-output-path]]
 === 実行出力パス
 
  `--runs-path`パラメーターは、実行出力とレポートを保存するためのカスタムディレクトリを指定します。
@@ -267,6 +276,7 @@ APP:
 ====
 
 
+[[skip-compatibility-check]]
 === 互換性チェックをスキップ
 
  `--skip-compatibility-check`パラメータは、ハードウェア互換性チェックをバイパスし、アップグレード先として指定したONTAPのバージョンを使用します。
@@ -300,6 +310,7 @@ CLUSTER:
 ====
 
 
+[[dashboard]]
 === [ダッシュボード]
 
  `--dashboard`パラメータは、クラスタに接続することなく、 `<runs>/dashboard/index.html`の既存の実行からダッシュボードを再生成します。通常の実行以外でフリートビューを更新する場合に使用します。ダッシュボードには、最近評価されたすべてのクラスタの健全性ステータスの概要が表示され、複数のクラスタのアップグレード準備状況を1か所で簡単に監視および比較できます。Webブラウザでダッシュボードを開くと、各クラスタの健全性ステータス、潜在的な阻害要因、およびリスクを一目で確認できます。
@@ -323,6 +334,7 @@ CLUSTER:
 ====
 
 
+[[disable-telemetry]]
 === テレメトリを無効にする
 
 テレメトリを無効にするには、次の行を `config.yaml`ファイルに追加します：
@@ -334,6 +346,7 @@ TELEMETRY:
 ----
 
 
+[[disable-automatic-updates]]
 === 自動更新を無効にする
 
 Upgrade Health Checker の自動更新を無効にするには、次の行を `config.yaml`ファイルに追加します：
@@ -345,10 +358,12 @@ AUTO_UPDATE:
 ----
 
 
+[[examples-using-each-input-method]]
 == 各入力方法の使用例
 
 
 
+[[combined-cli-arguments]]
 === 組み合わせた CLI 引数
 
 [listing]
@@ -365,6 +380,7 @@ AUTO_UPDATE:
 ----
 
 
+[[config-yaml-file]]
 === Config.yaml ファイル
 
 [listing]
@@ -382,6 +398,7 @@ APP:
 ----
 
 
+[[interactive-mode]]
 === 対話型モード
 
 必要なすべての入力パラメータを対話的に要求するには、引数なしでUpgrade Health Checkerを実行します：
@@ -392,6 +409,7 @@ APP:
 ----
 
 
+[[additional-commands]]
 == 追加コマンド
 
 これらのコマンドは、ツールの完全な実行以外にもいくつかの追加機能を提供します：

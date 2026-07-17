@@ -13,11 +13,14 @@ summary: Upgrade Health Checkerのレポートを受信するためのEメール
 
 
 [role="lead"]
-Upgrade Health Checkerにメールを統合することで、レポートをメールで受信できます。この機能は、config.yamlファイルまたはコマンドライン引数によって有効にできます。有効化すると、Upgrade Health Checkerは生成されたレポート（HTML、Excel、またはJSON形式）をSMTPサーバーを使用して、設定済みの1つ以上の受信者に送信します。この機能が無効になっている場合、レポートは送信されません。レポート生成が失敗し、メール送信が有効になっている場合、ログファイルは設定された受信者に送信されます。
+Upgrade Health Checker は、レポートを直接メールボックスに送信できます。この機能は、config.yaml ファイルまたはコマンドライン引数で有効にできます。有効化すると、Upgrade Health Checker は生成されたレポート（HTML、Excel、または JSON 形式）を SMTP サーバー経由で1人以上の受信者に送信します。無効にすると、レポートは送信されません。レポートの生成が失敗し、メール送信が有効になっている場合、Upgrade Health Checker はログファイルを設定済みの受信者にメールで送信します。
 
 
 
+[[configure-using-the-config-yaml-file]]
 == config.yamlファイルを使用して設定します
+
+config.yaml ファイルでメール設定を構成するには、メールレポートを有効にし、SMTP サーバーの詳細を追加し、受信者アドレスとレポート形式を指定します。
 
 . config.yamlファイルでメールレポートを有効にします。
 +
@@ -27,7 +30,7 @@ Upgrade Health Checkerにメールを統合することで、レポートをメ�
 EMAIL:
   ENABLED: true
 ----
-. 送信者の詳細と件名を含むSMTP設定を入力してください：
+. SMTP設定、送信者情報、件名を追加します：
 +
 [listing]
 ----
@@ -41,7 +44,7 @@ EMAIL:
     HOST: "smtp.example.com"
     PORT: [<port-number>]
 ----
-. 受信者のメールアドレスを指定し、メールで送信するレポート形式（HTML、EXCEL、JSON、ALLなど）を設定します：
+. 受信者のメールアドレスを追加し、システムがメールで送信するレポートの形式（HTML、EXCEL、JSON、またはすべてなど）を設定します。認証と暗号化も利用できます。
 +
 [listing]
 ----
@@ -57,12 +60,20 @@ EMAIL:
   SMTP:
     HOST: "smtp.example.com"
     PORT: [PORT]
+    USE_SMTP_AUTH: true
+    USE_TLS: true
+    USE_SSL: true
+    USERNAME: "user@example.com"
+    PASSWORD: "********"
 ----
 
 
 
 
+[[configure-using-command-line-arguments]]
 == コマンドライン引数を使用して設定する
+
+コマンドライン引数を使用して基本的なメール設定を構成し、レポートの有効化、受信者の指定、レポート形式の選択を行うことができます。
 
 . コマンドライン引数を使用してメールレポートを有効にする：
 +
@@ -86,14 +97,14 @@ EMAIL:
 
 [NOTE]
 ====
-以下の3つの属性は、コマンドライン引数とconfig.yamlファイルの両方を使用して設定できます。残りの属性はconfig.yamlファイルでのみ設定可能です：
+以下の3つの属性は、コマンドライン引数またはconfig.yamlファイルを使用して設定できます。残りの属性はすべてconfig.yamlファイルでのみ設定できます：
 
 * Eメールが有効
 * E メール受信者
 * Eメールレポート形式
 
 
-コマンドライン引数が指定された場合、config.yamlファイルの値が上書きされることに注意してください。
+コマンドライン引数はconfig.yamlファイルの値を上書きすることに注意してください。
 
 次に例を示します。
 

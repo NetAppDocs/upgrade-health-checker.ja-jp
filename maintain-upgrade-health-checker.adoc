@@ -17,6 +17,7 @@ summary: Upgrade Health Checkerのメンテナンスタスク。
 
 
 
+[[tmp-space-management]]
 == /tmp スペースの管理
 
 Upgrade Health Checkerは、実行中にそのコンポーネントを `/tmp`ディレクトリに抽出します。 `/tmp`のスペース不足に関連する問題が発生した場合は、次の点を考慮してください：
@@ -27,6 +28,7 @@ Upgrade Health Checkerは、実行中にそのコンポーネントを `/tmp`デ
 
 
 
+[[run-directory-cleanup]]
 == ディレクトリのクリーンアップを実行
 
 Upgrade Health Checkerは、実行ごとに固有の実行ディレクトリを作成し、そこにログと結果を格納します。ディスク容量を管理するには、一定期間（例：30日）経過後に古い実行ディレクトリを削除する自動クリーンアッププロセスを設定します。
@@ -41,6 +43,7 @@ find /mnt/nfs/uhc/runs -type d -mtime +30 -exec rm -rf {} + 2>/dev/null
 ----
 
 
+[[automatic-updates]]
 == 自動更新
 
 アップグレードヘルスチェッカーは、インターネット接続が利用可能な場合、実行後に自動的にアップデートを確認します。これにより、最新の機能、改善点、およびバグ修正を確実に利用できます。インターネットにアクセスできない場合は、link:https://console.netapp.com/automationHub["NetApp Console自動化ハブ"^]から最新バージョンを手動でダウンロードできます。

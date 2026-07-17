@@ -1,5 +1,5 @@
 ---
-sidebar: sidebarU 
+sidebar: sidebar 
 permalink: whats-new.html 
 keywords: upgrade, health, checker, whats new, release, notes 
 summary: このドキュメントサイトの新機能について学習します。 
@@ -17,9 +17,24 @@ Upgrade Health Checker（UHC）の新機能について説明します。link:ht
 
 
 
+[[17-july-2026]]
+== 2026年7月17日
+
+このアップデートでは、フリートリスクビューダッシュボード、メール認証と暗号化のサポート、ドライブカウントレポート、推奨 ONTAP バージョンサポート、NAS および SAN IMT チェックなど、いくつかの機能強化が追加されます。
+
+* UHCダッシュボード：*Fleet Risk*ビューが利用可能になりました
+* メール連携：認証と暗号化を備えたメールサーバーのサポート
+* レポートのクラスタ概要に「ドライブ数」を追加しました。
+* 推奨される ONTAP バージョンがサポート対象になりました
+* NASおよびSAN IMTチェックのサポートを追加しました
+
+
+
+
+[[11-june-2026]]
 == 2026年6月11日
 
-今回のアップグレードヘルスチェッカーのドキュメント更新には、以下の機能が含まれています。
+今回のアップデートでは、レポートのメール配信機能、ヘルスチェックの概要を素早く把握できるダッシュボードパラメータ、およびUpgrade Health Checkerの保守とトラブルシューティングに役立つ新しいドキュメントセクションが追加されました。
 
 * UHCは、レポートを受信トレイに直接配信することをサポートしています。
 +
@@ -31,7 +46,7 @@ link:dashboard-upgrade-health-checker.html["Health Checkerダッシュボード�
 
 * 新たに「メンテナンス」「トラブルシューティング」「よくある質問」セクションを追加しました。
 +
-** アップグレードヘルスチェッカーを常に良好な状態に保つには、定期的にアップデートを確認し、ログを監視して繰り返し発生する問題がないかを確認し、ツールがご使用の環境に合わせて正しく構成されていることを確認してください。
+** アップデートを確認し、ログを監視して繰り返し発生する問題を特定し、ツールが正しく設定されていることを確認することで、Upgrade Health Checkerを維持してください。
 +
 link:maintain-upgrade-health-checker.html["アップグレードヘルスチェッカーのメンテナンス"].
 
@@ -49,11 +64,12 @@ link:faq-upgrade-health-checker.html["Upgrade Health Checkerに関するFAQ"].
 
 
 
+[[15-april-2026]]
 == 2026年4月15日
 
-今回のアップグレードヘルスチェッカーのドキュメント更新には、以下の機能が含まれています。
+今回のアップデートでは、新しいXLSXレポート形式が追加され、自動アップデートを機能させるには新しいエンドポイントへのアクセスが必要になります。
 
-* UHC が自動更新機能を動作させるには、新しいエンドポイント (+https://api.activeiq.netapp.com+) へのアクセスが必要です。
+* UHCに新しいエンドポイント（+https://api.activeiq.netapp.com+）へのアクセスを許可する必要があります。これにより、自動更新機能が動作します。
 +
 link:set-up-upgrade-health-checker.html["Upgrade Health Checkerをダウンロードしてセットアップする"]。
 
@@ -68,8 +84,9 @@ link:automate-report-upgrade-health-checker.html["Upgrade Health Checkerでア�
 
 
 
+[[13-february-2026]]
 == 2026年2月13日
 
-Upgrade Health Checkerは、包括的なオンサイトレポートを生成する新しいソリューションを提供し、ONTAPアップグレードを成功させることができます。既存の自動化およびオーケストレーションフレームワークと併用することで、単一または複数のクラスタをアップグレードする際の効率を高めることができます。Upgrade Health Checkerは、ONTAP 9.11.1以降へのアップグレードをサポートします。
+Upgrade Health Checker が利用可能になりました。このツールは、詳細なオンサイトレポートを生成し、ONTAP のアップグレードを正常に完了するのに役立ちます。Upgrade Health Checker は、既存の自動化およびオーケストレーションフレームワークと連携して使用することで、単一または複数のクラスターをアップグレードする際の時間を節約できます。Upgrade Health Checker は、ONTAP 9.11.1 以降へのアップグレードをサポートしています。
 
 link:learn-about-upgrade-health-checker.html["Upgrade Health Checkerの詳細"]。
