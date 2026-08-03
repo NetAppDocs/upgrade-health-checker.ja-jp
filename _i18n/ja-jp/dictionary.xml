@@ -388,15 +388,15 @@
   <block id="3765a0a9e71fcf0695d585798c0f7818" category="paragraph">コマンドライン引数はconfig.yamlファイルの値を上書きすることに注意してください。</block>
   <block id="a6be72313a95cd7c51d73821a3ec4a39" category="section-title">2026年7月17日</block>
   <block id="a1b9ebd6f0a705373bb04a1ef3e3e5a1" category="paragraph">このアップデートでは、フリートリスクビューダッシュボード、メール認証と暗号化のサポート、ドライブカウントレポート、推奨 ONTAP バージョンサポート、NAS および SAN IMT チェックなど、いくつかの機能強化が追加されます。</block>
-  <block id="eb794a02fa8d9355140be4e8462e5f4f" category="list-text">UHCダッシュボード：*Fleet Risk*ビューが利用可能になりました</block>
-  <block id="69161900749195d35aba8ae3dd1b86e9" category="list-text">メール連携：認証と暗号化を備えたメールサーバーのサポート</block>
-  <block id="765efeade5c6287182e507f2e42e0c17" category="list-text">レポートのクラスタ概要に「ドライブ数」を追加しました。</block>
-  <block id="b3c16c4644ccd43c0fa7a23462d7f33c" category="list-text">推奨される ONTAP バージョンがサポート対象になりました</block>
-  <block id="3d845cec7f7e3420d8ce5c903cf124e5" category="list-text">NASおよびSAN IMTチェックのサポートを追加しました</block>
   <block id="8aab03955bf2c1214a6ad2ee0f63546a" category="paragraph">今回のアップデートでは、レポートのメール配信機能、ヘルスチェックの概要を素早く把握できるダッシュボードパラメータ、およびUpgrade Health Checkerの保守とトラブルシューティングに役立つ新しいドキュメントセクションが追加されました。</block>
   <block id="7d9c60c63b935ef67858fee9c59b31ce" category="list-text">アップデートを確認し、ログを監視して繰り返し発生する問題を特定し、ツールが正しく設定されていることを確認することで、Upgrade Health Checkerを維持してください。</block>
   <block id="f59b071ecb8fe980b0730a8d2ba9bd0c" category="paragraph">今回のアップデートでは、新しいXLSXレポート形式が追加され、自動アップデートを機能させるには新しいエンドポイントへのアクセスが必要になります。</block>
   <block id="8a4e5ac1aa6e6074a0de130e95d9919d" category="list-text">UHCに新しいエンドポイント（+https://api.activeiq.netapp.com+）へのアクセスを許可する必要があります。これにより、自動更新機能が動作します。</block>
   <block id="a272a47b723d2038be71ba15d270606e" category="paragraph">Upgrade Health Checker が利用可能になりました。このツールは、詳細なオンサイトレポートを生成し、ONTAP のアップグレードを正常に完了するのに役立ちます。Upgrade Health Checker は、既存の自動化およびオーケストレーションフレームワークと連携して使用することで、単一または複数のクラスターをアップグレードする際の時間を節約できます。Upgrade Health Checker は、ONTAP 9.11.1 以降へのアップグレードをサポートしています。</block>
   <block id="742eb09495234f505b1ad9d7813d30e7" category="sidebar">レポートをメールで受け取る</block>
+  <block id="2e511792df0fe560a279011a4550ebaf" category="list-text">認証と暗号化機能を備えたメールサーバーをサポートします。</block>
+  <block id="e6b6c01fe88f4c529278342034609f7c" category="list-text">所有する資産全体のリスクをランク付けする「フリートリスクビュー」ダッシュボードが含まれています。これで、どのブロックされたクラスターが最もリスクが高いかを確認できるようになりました。これにより、修復作業の優先順位付けが可能になります。</block>
+  <block id="856fc3b929c90b3c81bd17984abe77cd" category="list-text">クラスターレポートに、ONTAP バージョン、ノード数、および容量とともに、ドライブ数が追加されました。これにより、アップグレードおよび容量計画のためのハードウェアスナップショットが完成しました。</block>
+  <block id="eed66fd70ff3d1349ac990af700a5a10" category="list-text">UHC評価には、推奨されるアップグレード対象の ONTAP バージョンが含まれるようになりました。</block>
+  <block id="70f1990f138a67936a4113eceb3a2154" category="list-text">NASおよびSAN IMTチェックのサポートを追加しました。</block>
 </blocks>
