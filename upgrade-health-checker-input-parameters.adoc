@@ -4,7 +4,7 @@ permalink: upgrade-health-checker-input-parameters.html
 keywords: upgrade, health, checker, input, parameter 
 summary: ONTAP クラスタのアップグレードレポートの生成を支援するために、Upgrade Health Checker の入力パラメータの詳細を確認できます。 
 ---
-= Upgrade Health Checkerの入力パラメータについて学ぶ
+= Upgrade Health Checkerの入力パラメータ
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

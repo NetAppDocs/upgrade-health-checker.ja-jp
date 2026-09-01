@@ -4,7 +4,7 @@ permalink: generate-report-upgrade-health-checker.html
 keywords: upgrade, health, checker, report 
 summary: Upgrade Health Checkerを使用すると、単一または複数のONTAPクラスタのアップグレードプランを生成できます。 
 ---
-= Upgrade Health Checkerでアップグレードプランを生成する
+= Upgrade Health Checkerでアップグレード計画を生成する
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
