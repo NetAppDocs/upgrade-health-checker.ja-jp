@@ -52,7 +52,7 @@ Upgrade Health Checkerは、オンプレミスONTAPバージョン9.11.1以降�
 
  a| 
 *ホスティング要件*
-| 仮想マシンは、クラスタ接続とインターネットアクセスが可能な場所に配置して、ツールの自動更新を可能にしてください。マシンは、自動更新を実行し、NetAppがアップグレードプランに関するAutoSupport情報を受信できるようにするために、HTTPS（443）を介して以下のエンドポイントにアクセスできる必要があります：https://support.netapp.com/[] https://api.uhc.netapp.com[] https://gql.aiq.netapp.com[] https://api.activeiq.netapp.com[] 
+| 仮想マシンは、クラスタ接続とインターネットアクセスが可能な場所に配置して、ツールの自動更新を可能にしてください。マシンは、自動更新を実行し、アップグレードプランに関する情報を NetApp が AutoSupport で受信できるようにするために、HTTPS （443） を介して以下のエンドポイントにアクセスできる必要があります。\https://support.netapp.com \https://api.uhc.netapp.com \https://gql.aiq.netapp.com \https://api.activeiq.netapp.com 
 
 
  a| 
@@ -60,7 +60,7 @@ Upgrade Health Checkerは、オンプレミスONTAPバージョン9.11.1以降�
 | アクセスを容易にするためにWebサーバをインストールします 
 |===
 
-NOTE: 仮想マシンが自動更新エンドポイントとテレメトリエンドポイント（(https://support.netapp.com/[]および https://api.activeiq.netapp.com[]）にHTTPS（443）経由で接続できることを確認し、NetAppがアップグレードプランに関するAutoSupport情報を受信できるようにします。インターネットアクセスが利用できない場合は、Upgrade Health Checkerの最新バージョンを手動でダウンロードする必要があります。
+NOTE: 仮想マシンが自動更新エンドポイントおよびテレメトリエンドポイント（\https://support.netapp.com および \https://api.activeiq.netapp.com）に HTTPS （443） 経由で接続できることを確認し、NetApp がアップグレードプランに関する AutoSupport 情報を受信できるようにしてください。インターネットにアクセスできない場合は、Upgrade Health Checker の最新バージョンを手動でダウンロードする必要があります。
 
 .手順
 . link:https://console.netapp.com/automationHub["NetApp Console自動化ハブ"^]に移動し、Upgrade Health Checkerタイルを見つけて、Upgrade Health Checkerバイナリをダウンロードします。
