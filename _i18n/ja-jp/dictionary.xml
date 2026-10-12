@@ -300,7 +300,6 @@
   <block id="f46e85a0de52240f550f9daab9d6086c" category="list-text">E メール受信者</block>
   <block id="ea263adf46b6d5e874d790afd83f0987" category="list-text">Eメールレポート形式</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">次に例を示します。</block>
-  <block id="1cc4274eac4a90919037379ad302ee24" category="summary">アップグレードヘルスチェッカーのトラブルシューティング：ONTAPアップグレードに関する一般的な問題、エラー、および解決策。</block>
   <block id="33fc1d20f1d2e7e8d9ea39cc1c1e260b" category="doc">アップグレードヘルスチェッカーのトラブルシューティング</block>
   <block id="8bbf781921fc79273f7113760a28cdce" category="paragraph">アップグレードヘルスチェッカーの一般的な問題のトラブルシューティング方法と、ONTAPアップグレード計画をブロックする可能性のあるエラーの解決方法を学びましょう。</block>
   <block id="7a4e5e5bc542eae2d10e3506f839f2ae" category="section-title">問題のトラブルシューティング</block>
@@ -402,4 +401,5 @@
   <block id="d37632fbc2f0f1b27ade5808d2dec434" category="doc">アップグレードヘルスチェッカーに関する法的通知</block>
   <block id="58ce19f9d14bbf36c99916598d07b7c7" category="cell">仮想マシンは、クラスタ接続とインターネットアクセスが可能な場所に配置して、ツールの自動更新を可能にしてください。マシンは、自動更新を実行し、アップグレードプランに関する情報を NetApp が AutoSupport で受信できるようにするために、HTTPS （443） を介して以下のエンドポイントにアクセスできる必要があります。\https://support.netapp.com \https://api.uhc.netapp.com \https://gql.aiq.netapp.com \https://api.activeiq.netapp.com</block>
   <block id="f8dfac59d1fb625ac9d81d11aafbcd07" category="admonition">仮想マシンが自動更新エンドポイントおよびテレメトリエンドポイント（\https://support.netapp.com および \https://api.activeiq.netapp.com）に HTTPS （443） 経由で接続できることを確認し、NetApp がアップグレードプランに関する AutoSupport 情報を受信できるようにしてください。インターネットにアクセスできない場合は、Upgrade Health Checker の最新バージョンを手動でダウンロードする必要があります。</block>
+  <block id="7b109a0da4b947e1ef4b1af915317559" category="summary">ONTAPアップグレードの一般的な問題、エラー、解決策を確認して、アップグレードヘルスチェッカーのトラブルシューティングを行います。</block>
 </blocks>
