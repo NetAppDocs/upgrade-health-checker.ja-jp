@@ -17,6 +17,17 @@ Upgrade Health Checker（UHC）の新機能について説明します。link:ht
 
 
 
+[[28-october-2026]]
+== 2026年10月28日
+
+このアップデートにより、最新のONTAPパッチリリースバージョンを自動的に選択する機能が追加され、サポートされているONTAP HotFixアップグレードバージョンがレポートに一覧表示されるようになりました。
+
+*  `--target-ontap-version=latest_patch`または `config.yaml`ファイルを使用して、最新のONTAPパッチリリースバージョンを自動選択する機能を提供します。
+* サポート対象のONTAP HotFixアップグレードバージョンがレポートに記載されるようになりました。
+
+
+
+
 [[15-october-2026]]
 == 2026年10月15日
 
@@ -24,7 +35,7 @@ Upgrade Health Checker（UHC）の新機能について説明します。link:ht
 
 * UHC評価では現在、対象バージョンに対するONTAPのリスクを評価しています。
 * レポートには、CVE ID、CVSSスコア、および推奨される修正バージョンが含まれるようになりました。
-* UHCは、 `--target-ontap-version=recommended`パラメータを使用して、または `config.yaml`ファイル内で、ONTAPバージョンを自動的に選択できるようになりました。
+* UHCは、 `--target-ontap-version=recommended`パラメータを使用するか、 `config.yaml`ファイルで、推奨されるONTAPバージョンを自動的に選択することをサポートするようになりました。
 * レポートには推奨ファームウェアバージョンが含まれるようになりました。
 
 

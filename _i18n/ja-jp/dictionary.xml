@@ -406,6 +406,10 @@
   <block id="273251dcc234403d19bf0e1b8a9c54c2" category="paragraph">このアップデートでは、対象バージョンのリスク評価、レポートの詳細、推奨されるONTAPバージョンの選択、およびファームウェアの推奨事項にいくつかの機能強化が追加されています。</block>
   <block id="e8f602fbb5275e969de02c4ff90239cc" category="list-text">UHC評価では現在、対象バージョンに対するONTAPのリスクを評価しています。</block>
   <block id="3c352be1f1f9a774d8de0a66650f2a00" category="list-text">レポートには、CVE ID、CVSSスコア、および推奨される修正バージョンが含まれるようになりました。</block>
-  <block id="fe6994d091ee557d1bc609b9f347f0e5" category="list-text">UHCは、<block ref="1bd361f49e949b9f207ae59725d3ed48" prefix=" " category="inline-code"></block>パラメータを使用して、または<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block>ファイル内で、ONTAPバージョンを自動的に選択できるようになりました。</block>
   <block id="5ffdabc76a252a34c19dc9bbdcd1ff5b" category="list-text">レポートには推奨ファームウェアバージョンが含まれるようになりました。</block>
+  <block id="6b3529a2a10bfee089b3f638467b7e2b" category="section-title">2026年10月28日</block>
+  <block id="325e52854858e04755ae213c8d115dea" category="paragraph">このアップデートにより、最新のONTAPパッチリリースバージョンを自動的に選択する機能が追加され、サポートされているONTAP HotFixアップグレードバージョンがレポートに一覧表示されるようになりました。</block>
+  <block id="428497b30d56e595e7b8a586873571fc" category="list-text"><block ref="e32d3e545f4ee67e40af7936e4051a3e" prefix=" " category="inline-code"></block>または<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block>ファイルを使用して、最新のONTAPパッチリリースバージョンを自動選択する機能を提供します。</block>
+  <block id="56d532fa14adf0150f0553c398ba85a1" category="list-text">サポート対象のONTAP HotFixアップグレードバージョンがレポートに記載されるようになりました。</block>
+  <block id="b8c3d27a6b7a61bca4f7cf2ed9d3bdcd" category="list-text">UHCは、<block ref="1bd361f49e949b9f207ae59725d3ed48" prefix=" " category="inline-code"></block>パラメータを使用するか、<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block>ファイルで、推奨されるONTAPバージョンを自動的に選択することをサポートするようになりました。</block>
 </blocks>
