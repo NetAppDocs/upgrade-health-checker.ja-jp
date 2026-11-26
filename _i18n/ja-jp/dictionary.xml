@@ -412,4 +412,8 @@
   <block id="428497b30d56e595e7b8a586873571fc" category="list-text"><block ref="e32d3e545f4ee67e40af7936e4051a3e" prefix=" " category="inline-code"></block>または<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block>ファイルを使用して、最新のONTAPパッチリリースバージョンを自動選択する機能を提供します。</block>
   <block id="56d532fa14adf0150f0553c398ba85a1" category="list-text">サポート対象のONTAP HotFixアップグレードバージョンがレポートに記載されるようになりました。</block>
   <block id="b8c3d27a6b7a61bca4f7cf2ed9d3bdcd" category="list-text">UHCは、<block ref="1bd361f49e949b9f207ae59725d3ed48" prefix=" " category="inline-code"></block>パラメータを使用するか、<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block>ファイルで、推奨されるONTAPバージョンを自動的に選択することをサポートするようになりました。</block>
+  <block id="d02493941160acc73e12773f810e6b13" category="section-title">2026年11月19日</block>
+  <block id="a80c4b609d83b206bc9be17575c1ce85" category="paragraph">今回のアップデートでは、HTMLレポートにCVEの詳細情報が追加され、パフォーマンスが大幅に向上しました。</block>
+  <block id="9e21447338c663ba6a8f107a6db2e8a5" category="list-text">HTMLレポートに、各CVEの推奨バージョンと深刻度が表示されるようになりました。</block>
+  <block id="6be5d7a0eb5b4022c1b6443c38d7004c" category="list-text">パフォーマンスの向上により、UHCのメモリ、ストレージ、および実行時間の消費量が大幅に削減されます。</block>
 </blocks>
